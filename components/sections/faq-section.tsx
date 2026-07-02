@@ -58,7 +58,9 @@ export function FaqSection({
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="prose-narrow text-sm leading-relaxed text-muted-foreground">
-                    {faq.answer}
+                    {faq.answer.split("\n\n").map((paragraph) => (
+                      <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+                    ))}
                   </AccordionContent>
                 </AccordionItem>
               ))}

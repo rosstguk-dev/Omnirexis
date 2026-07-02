@@ -357,7 +357,7 @@ export const faqs = [
   {
     question: "Do you build your own AI software?",
     answer:
-      "No. Omnirexis is an implementation consultancy, not a software company. We evaluate the market, select the best-fit AI technologies for your requirements, and implement them within your business. You benefit from enterprise-grade tools without building or maintaining proprietary systems.",
+      "No.\n\nWe specialise in selecting, implementing and managing the world's leading AI technologies to create bespoke business solutions.\n\nThis approach allows us to deliver proven, reliable and scalable systems without our clients funding unnecessary software development.",
   },
   {
     question: "How long does implementation take?",
