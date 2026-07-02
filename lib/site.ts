@@ -236,31 +236,31 @@ export const processSteps = [
     step: "01",
     title: "Discovery Call",
     description:
-      "A focused conversation to understand how your business operates, where time is being lost and which commercial outcomes matter most.",
+      "Understand the business, current systems and objectives.",
   },
   {
     step: "02",
     title: "AI Opportunity Audit",
     description:
-      "We map your workflows, quantify the cost of manual processes and prioritise the automations with the strongest return on investment.",
+      "Identify the highest ROI opportunities.",
   },
   {
     step: "03",
     title: "Solution Design",
     description:
-      "A tailored implementation plan — recommended technologies, integrations, timeline and projected returns. Every decision tied to a business outcome.",
+      "Select the most appropriate AI technologies and design the implementation plan.",
   },
   {
     step: "04",
     title: "Implementation",
     description:
-      "We configure, integrate and deploy the right AI tools within your existing stack — tested, documented and ready for your team to use with confidence.",
+      "Configure, integrate and deploy the solution with minimal disruption.",
   },
   {
     step: "05",
-    title: "Optimisation",
+    title: "Optimisation & Support",
     description:
-      "We monitor performance, refine what works and expand your automation footprint — so value compounds long after go-live.",
+      "Monitor performance, improve results and provide ongoing support as the business grows.",
   },
 ] as const;
 

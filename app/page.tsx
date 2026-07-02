@@ -114,19 +114,19 @@ export default function HomePage() {
           <FadeIn>
             <SectionHeading
               id="process-heading"
-              eyebrow="Process"
-              title="From strategy call to measurable ROI"
-              description="A transparent five-stage engagement — designed so you always know where you are, what's next, and what it's worth."
+              eyebrow="How It Works"
+              title="A clear path from discovery to lasting results"
+              description="Five straightforward stages — so you always know where you are, what happens next, and what it's worth to your business."
               theme="dark"
             />
           </FadeIn>
-          <div className="mx-auto mt-16 max-w-2xl">
+          <div className="mx-auto mt-16 max-w-3xl">
             <ProcessTimeline theme="dark" />
           </div>
           <CtaStrip
             theme="dark"
             title="Ready to start with step one?"
-            description="Book your free AI Strategy Call and we'll map the highest-value opportunities in your business."
+            description="Book your free Discovery Call and we'll understand your business, systems and objectives — before recommending a single solution."
           />
         </div>
       </Section>

@@ -9,7 +9,7 @@ import { createMetadata, siteConfig } from "@/lib/site";
 export const metadata = createMetadata({
   title: "Our Process",
   description:
-    "How Omnirexis delivers AI implementation — discovery call, opportunity audit, solution design, technology integration and ongoing optimisation for measurable business outcomes.",
+    "How Omnirexis works — discovery call, AI opportunity audit, solution design, implementation, and optimisation and support for measurable business outcomes.",
   path: "/process",
 });
 
@@ -17,13 +17,13 @@ export default function ProcessPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Process"
-        title="Clarity at every stage"
-        description="No black boxes. No surprise invoices. A proven five-step consultancy model designed for transparency, speed and measurable returns."
+        eyebrow="How It Works"
+        title="Your customer journey with Omnirexis"
+        description="Five clear stages — from understanding your business to delivering ongoing support as you grow."
       />
 
       <Section ariaLabelledby="timeline-heading">
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-3xl">
           <ProcessTimeline />
         </div>
         <FadeIn className="mt-16 text-center">
