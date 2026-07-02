@@ -9,6 +9,13 @@ type SolutionCardProps = {
   theme?: "light" | "dark";
 };
 
+const detailSections = [
+  { key: "problem", label: "The business problem" },
+  { key: "outcome", label: "The outcome" },
+  { key: "process", label: "The implementation process" },
+  { key: "support", label: "Ongoing support" },
+] as const;
+
 export function SolutionCard({
   solution,
   index,
@@ -35,7 +42,7 @@ export function SolutionCard({
         <p
           className={cn(
             "mt-2 text-sm leading-relaxed",
-            isDark ? "text-white/45" : "text-muted-foreground",
+            isDark ? "text-white/55" : "text-muted-foreground",
           )}
         >
           {solution.summary}
@@ -43,23 +50,28 @@ export function SolutionCard({
 
         <div
           className={cn(
-            "my-5 h-px w-full",
+            "my-6 h-px w-full",
             isDark ? "bg-white/[0.06]" : "bg-[#081826]/[0.06]",
           )}
         />
 
-        <p
-          className={cn(
-            "flex-1 text-sm leading-relaxed",
-            isDark ? "text-white/55" : "text-muted-foreground",
-          )}
-        >
-          {solution.benefits}
-        </p>
-
-        <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1E90FF]">
-          {solution.outcome}
-        </p>
+        <div className="flex flex-1 flex-col gap-5">
+          {detailSections.map((section) => (
+            <div key={section.key}>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1E90FF]">
+                {section.label}
+              </p>
+              <p
+                className={cn(
+                  "mt-1.5 text-sm leading-relaxed",
+                  isDark ? "text-white/50" : "text-muted-foreground",
+                )}
+              >
+                {solution[section.key]}
+              </p>
+            </div>
+          ))}
+        </div>
       </GlassCard>
     </FadeIn>
   );

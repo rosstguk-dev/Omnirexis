@@ -8,9 +8,9 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { createMetadata, siteConfig, solutions } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "AI Implementation Services",
+  title: "Flagship Services",
   description:
-    "Omnirexis implements AI chatbots, voice receptionists, workflow automation, lead qualification, customer support automation, internal assistants, sales automation and business process optimisation — using the best-fit technologies for each client.",
+    "Omnirexis offers four flagship services: AI Opportunity Audit, AI Voice Receptionists, Business Process Automation and AI Customer Experience — each designed to deliver measurable business outcomes.",
   path: "/solutions",
 });
 
@@ -19,8 +19,8 @@ export default function SolutionsPage() {
     <>
       <PageHeader
         eyebrow="Solutions"
-        title="AI implementations with commercial impact built in"
-        description="Eight outcome-led capabilities — each implemented with the right technology to save time, reduce costs, improve customer experience or accelerate revenue."
+        title="Four flagship services built around your outcomes"
+        description="Each service is designed to solve a real business problem, deliver measurable results, and include ongoing support — without unnecessary complexity."
       />
 
       <Section className="section-light" ariaLabelledby="capabilities-heading">
@@ -28,18 +28,18 @@ export default function SolutionsPage() {
           <SectionHeading
             id="capabilities-heading"
             eyebrow="Capabilities"
-            title="What we deliver"
+            title="Our flagship services"
             description={siteConfig.positioning}
           />
         </FadeIn>
-        <div className="mt-16 grid gap-5 md:grid-cols-2">
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
           {solutions.map((solution, i) => (
             <SolutionCard key={solution.title} solution={solution} index={i} />
           ))}
         </div>
         <CtaStrip
-          title="Which solution is right for your business?"
-          description="We'll recommend the right starting point based on your workflows, tools and commercial priorities — on a free strategy call."
+          title="Which service is right for your business?"
+          description="Most clients start with an AI Opportunity Audit. We'll recommend the right starting point based on your workflows, tools and commercial priorities — on a free strategy call."
         />
       </Section>
 

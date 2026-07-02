@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  Bot,
   Building2,
   Car,
   ChefHat,
@@ -15,10 +14,10 @@ import {
   LineChart,
   Mic,
   Scale,
+  Search,
   ShoppingBag,
   Sparkles,
   Target,
-  TrendingUp,
   type LucideIcon,
   Users,
   Wrench,
@@ -87,82 +86,68 @@ export type Solution = {
   icon: LucideIcon;
   title: string;
   summary: string;
-  benefits: string;
+  problem: string;
   outcome: string;
+  process: string;
+  support: string;
 };
 
 export const solutions: Solution[] = [
   {
-    icon: Bot,
-    title: "AI Chatbots",
+    icon: Search,
+    title: "AI Opportunity Audit",
     summary:
-      "We implement conversational AI using leading platforms — configured on your business, deployed across web, messaging and social around the clock.",
-    benefits:
-      "Capture leads the moment they arrive, resolve routine enquiries without wait times, and give every visitor a consistent, on-brand experience.",
-    outcome: "3× faster response · Always on",
+      "We analyse your business to identify where AI can save time, reduce costs and generate new revenue opportunities.",
+    problem:
+      "You know AI could help, but you're not sure where to start. Time is lost to manual work, leads go cold, and teams repeat the same tasks — without a clear picture of what automation is actually worth.",
+    outcome:
+      "A prioritised roadmap showing exactly where AI will save time, cut costs and unlock new revenue — with projected returns for each opportunity, ranked by impact.",
+    process:
+      "We review how your business operates, map your key workflows and quantify where time and money are being lost. You receive a clear, honest report — before any commitment to implement.",
+    support:
+      "Your strategist remains available to reassess priorities as your business evolves. Many clients move straight from the audit into implementation — with a roadmap already in place.",
   },
   {
     icon: Mic,
     title: "AI Voice Receptionists",
     summary:
-      "We integrate proven voice AI that answers calls, routes enquiries, books appointments and handles requests with clarity and professionalism.",
-    benefits:
-      "Every call gets answered — peak hours, evenings and weekends included. Your team receives only the conversations that need a human.",
-    outcome: "Zero missed calls · Intelligent routing",
+      "Intelligent AI receptionists that answer calls, qualify leads, answer common questions and book appointments 24/7.",
+    problem:
+      "Calls go unanswered during busy periods, evenings and weekends. Leads hang up. Your team spends hours on routine enquiries instead of the work that actually grows the business.",
+    outcome:
+      "Every call answered. Leads qualified automatically. Appointments booked without adding headcount. Your team handles only the conversations that genuinely need a human.",
+    process:
+      "We assess your call flows, select the right voice AI for your business, configure it with your FAQs and booking rules, integrate with your calendar and CRM, and test thoroughly before go-live.",
+    support:
+      "We monitor call quality, update responses as your business changes, and refine routing so performance improves month on month.",
   },
   {
     icon: Zap,
-    title: "Workflow Automation",
+    title: "Business Process Automation",
     summary:
-      "We connect and automate operations, finance, admin and internal communications — mapped to how your team actually works, using the right tools for each workflow.",
-    benefits:
-      "Remove manual handoffs, cut processing errors and return hours to your team every single week.",
-    outcome: "20+ hours recovered weekly",
-  },
-  {
-    icon: Target,
-    title: "Lead Qualification",
-    summary:
-      "We implement automated scoring, routing and nurturing that surfaces your best opportunities and advances them through the pipeline.",
-    benefits:
-      "Sales spends time on deals that matter. Follow-ups happen on time. Nothing falls through the cracks.",
-    outcome: "40% more qualified pipeline",
+      "Automate repetitive admin, emails, CRM updates, reporting, customer follow-ups and internal workflows.",
+    problem:
+      "Your team loses hours every week to repetitive admin — updating spreadsheets, sending follow-up emails, copying data between systems and preparing reports that nobody should be doing by hand.",
+    outcome:
+      "Twenty or more hours returned to your team each week. Fewer errors. Faster follow-ups. Lower operational costs — without sacrificing quality.",
+    process:
+      "We map your repetitive workflows, identify the highest-impact automations, connect your existing tools and deploy step by step — always starting with what delivers returns fastest.",
+    support:
+      "We monitor your automations, fix bottlenecks and expand what's working. As your business changes, your workflows evolve with it.",
   },
   {
     icon: Headphones,
-    title: "Customer Support Automation",
+    title: "AI Customer Experience",
     summary:
-      "We integrate intelligent triage, automated resolution and smart escalation into your existing support workflow — no rip-and-replace required.",
-    benefits:
-      "Routine tickets resolve instantly. Agents focus on complex cases. Satisfaction scores climb without adding headcount.",
-    outcome: "70% of tickets handled automatically",
-  },
-  {
-    icon: Sparkles,
-    title: "Internal AI Assistants",
-    summary:
-      "We deploy private, secure AI assistants for document drafting, knowledge retrieval, meeting summaries and day-to-day internal tasks.",
-    benefits:
-      "Accelerate how your team works — without exposing sensitive data or forcing a platform migration.",
-    outcome: "Faster decisions · Less admin",
-  },
-  {
-    icon: TrendingUp,
-    title: "Sales Automation",
-    summary:
-      "We implement automated follow-ups, proposal support, CRM updates and pipeline management across the full sales cycle.",
-    benefits:
-      "Consistent outreach at scale. No dropped leads. A sales engine that grows without proportional hiring.",
-    outcome: "28% higher close rates",
-  },
-  {
-    icon: Cog,
-    title: "Business Process Optimisation",
-    summary:
-      "We analyse core processes, identify where AI creates the most value, and implement improvements that compound over time.",
-    benefits:
-      "Eliminate operational waste, increase throughput and remove the repetitive work that quietly erodes your margins.",
-    outcome: "35% average cost reduction",
+      "Implement AI chat, knowledge assistants and automated customer support to improve response times and customer satisfaction.",
+    problem:
+      "Customers wait too long for answers. Support teams are overwhelmed with the same questions. Slow response times damage satisfaction — and cost you sales.",
+    outcome:
+      "Faster responses, higher satisfaction scores and more enquiries converted — without hiring more support staff.",
+    process:
+      "We review your customer touchpoints, implement chat and knowledge tools suited to your business, connect them to your existing support channels and configure them around your products and policies.",
+    support:
+      "We track resolution rates and satisfaction, update content as your business changes and continuously improve how your customers are served.",
   },
 ];
 
@@ -377,7 +362,7 @@ export const faqs = [
   {
     question: "How long does implementation take?",
     answer:
-      "Focused implementations such as chatbots or lead routing typically go live within two to four weeks. More complex workflow integrations take six to ten weeks. We always deploy high-impact solutions first, so you see returns while the broader roadmap takes shape.",
+      "Focused services such as AI Voice Receptionists or Business Process Automation typically go live within two to four weeks. More complex customer experience integrations take six to ten weeks. We always deploy high-impact work first, so you see returns while the broader roadmap takes shape.",
   },
   {
     question: "Do I need technical knowledge?",

@@ -49,25 +49,25 @@ export default function HomePage() {
           <SectionHeading
             id="solutions-heading"
             eyebrow="Solutions"
-            title="AI implementations tailored to how your business operates"
-            description="From customer-facing automation to internal workflow improvements — every engagement is scoped to measurable commercial outcomes, not technology for its own sake."
+            title="Four flagship services. One focus: your results."
+            description="Every engagement starts with understanding your business — then delivers measurable improvements in time, cost, revenue and customer experience."
           />
         </FadeIn>
-        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {solutions.slice(0, 6).map((solution, i) => (
+        <div className="mt-16 grid gap-5 md:grid-cols-2">
+          {solutions.map((solution, i) => (
             <SolutionCard key={solution.title} solution={solution} index={i} />
           ))}
         </div>
         <CtaStrip
           title="Not sure where to begin?"
-          description="On a strategy call, we'll identify the two or three implementations that will deliver the fastest return for your specific business."
+          description="Start with an AI Opportunity Audit — or book a strategy call and we'll recommend the right first step for your business."
         />
         <FadeIn className="mt-8 text-center">
           <Button
             nativeButton={false}
             render={
               <Link href="/solutions" className="inline-flex items-center gap-2">
-                View all eight solutions
+                Explore our flagship services
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             }
