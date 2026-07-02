@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { createMetadata, siteConfig } from "@/lib/site";
+import { BusinessHours } from "@/components/shared/business-hours";
+import { createMetadata, phoneTelHref, siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
   title: "Book Your Free AI Strategy Call",
@@ -103,7 +104,7 @@ export default function ContactPage() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="(415) 882-3400"
+                      placeholder="07566 729429"
                       autoComplete="tel"
                       className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
                     />
@@ -155,11 +156,10 @@ export default function ContactPage() {
                   icon: Phone,
                   label: "Phone",
                   value: siteConfig.phone,
-                  href: `tel:${siteConfig.phone.replace(/\D/g, "")}`,
+                  href: phoneTelHref(),
                 },
                 {
                   label: "Business hours",
-                  value: siteConfig.businessHours,
                   icon: Clock,
                 },
               ].map((item) => (
@@ -180,9 +180,15 @@ export default function ContactPage() {
                         >
                           {item.value}
                         </a>
+                      ) : item.label === "Business hours" ? (
+                        <BusinessHours
+                          className="mt-1"
+                          daysClassName="text-sm text-white/45"
+                          hoursClassName="text-sm text-white/45"
+                        />
                       ) : (
                         <p className="mt-1 text-sm text-white/45">
-                          {item.value}
+                          {"value" in item ? item.value : null}
                         </p>
                       )}
                     </div>

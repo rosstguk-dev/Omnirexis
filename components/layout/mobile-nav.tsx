@@ -13,7 +13,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { navLinks } from "@/lib/site";
+import { BusinessHours } from "@/components/shared/business-hours";
+import { navLinks, phoneTelHref, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
@@ -62,6 +63,30 @@ export function MobileNav() {
           ))}
           <div className="mt-6">
             <CtaButton className="w-full" size="default" />
+          </div>
+          <div className="mt-8 border-t border-white/10 pt-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/35">
+              Contact
+            </p>
+            <div className="mt-4 space-y-2 text-sm">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="block text-white/70 transition-colors hover:text-[#55D6FF]"
+              >
+                {siteConfig.email}
+              </a>
+              <a
+                href={phoneTelHref()}
+                className="block text-white/70 transition-colors hover:text-[#55D6FF]"
+              >
+                {siteConfig.phone}
+              </a>
+            </div>
+            <BusinessHours
+              className="mt-4"
+              daysClassName="text-sm text-white/55"
+              hoursClassName="text-sm text-white/40"
+            />
           </div>
         </nav>
       </SheetContent>

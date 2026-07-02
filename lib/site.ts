@@ -37,10 +37,10 @@ export const siteConfig = {
     "We don't sell AI. We sell time savings, efficiency, customer experience improvements and business growth.",
   url: "https://omnirexis.com",
   email: "hello@omnirexis.com",
-  phone: "+1 (415) 882-3400",
+  phone: "07566 729429",
+  phoneInternational: "+44 7566 729429",
   linkedin: "https://linkedin.com/company/omnirexis",
   address: "100 Innovation Drive, Suite 400, San Francisco, CA 94105",
-  businessHours: "Monday – Friday, 9:00 AM – 6:00 PM PST",
   ctaLabel: "Book Your Free AI Strategy Call",
   ctaHref: "/contact",
   ctaMicrocopy: "30-minute call · Senior strategist · No obligation",
@@ -415,6 +415,19 @@ export const faqs = [
       "We apply enterprise-grade practices: encrypted data in transit and at rest, role-based access controls and compliance with applicable data protection standards. Your data is never sold, shared with third parties or used to train public models.",
   },
 ] as const;
+
+export const businessHoursSchedule = [
+  { days: "Monday – Friday", hours: "8:00 AM – 8:00 PM" },
+  { days: "Saturday – Sunday", hours: "9:00 AM – 5:00 PM" },
+] as const;
+
+export function phoneTelHref(phone = siteConfig.phone) {
+  const normalized = phone.replace(/\s/g, "");
+  if (normalized.startsWith("0")) {
+    return `tel:+44${normalized.slice(1)}`;
+  }
+  return `tel:${normalized}`;
+}
 
 export const footerLinks = {
   company: navLinks,

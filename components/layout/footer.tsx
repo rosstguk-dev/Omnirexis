@@ -2,7 +2,8 @@ import Link from "next/link";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { Logo } from "@/components/layout/logo";
 import { CtaButton } from "@/components/shared/cta-button";
-import { footerLinks, siteConfig } from "@/lib/site";
+import { BusinessHours } from "@/components/shared/business-hours";
+import { footerLinks, phoneTelHref, siteConfig } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -21,7 +22,7 @@ export function Footer() {
           <CtaButton className="mt-6 shrink-0 sm:mt-0" size="default" />
         </div>
 
-        <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo variant="light" showTagline />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
@@ -54,6 +55,35 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/35">
+              Contact
+            </h3>
+            <ul className="space-y-0.5 text-sm">
+              <li>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="transition-colors hover:text-[#55D6FF]"
+                >
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={phoneTelHref()}
+                  className="transition-colors hover:text-[#55D6FF]"
+                >
+                  {siteConfig.phone}
+                </a>
+              </li>
+            </ul>
+            <BusinessHours
+              className="mt-4"
+              daysClassName="text-sm text-white/45"
+              hoursClassName="text-sm text-white/40"
+            />
           </div>
 
           <div>
