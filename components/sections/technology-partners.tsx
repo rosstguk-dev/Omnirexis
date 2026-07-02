@@ -12,24 +12,17 @@ type TechnologyPartnersProps = {
   className?: string;
 };
 
-function TechnologyLogo({ name, logoSlug }: { name: string; logoSlug?: string }) {
-  if (!logoSlug) {
-    return (
-      <span className="text-center text-sm font-semibold tracking-[-0.02em] text-[#081826]/80">
-        {name}
-      </span>
-    );
-  }
-
+function TechnologyLogo({ name, logoId }: { name: string; logoId: string }) {
   return (
-    <Image
-      src={`https://cdn.simpleicons.org/${logoSlug}/081826`}
-      alt={`${name} logo`}
-      width={96}
-      height={32}
-      className="h-7 w-auto max-w-[5.5rem] object-contain opacity-70 transition-opacity duration-300 group-hover:opacity-100 sm:h-8 sm:max-w-[6.5rem]"
-      unoptimized
-    />
+    <div className="flex h-10 w-full items-center justify-center">
+      <Image
+        src={`/logos/${logoId}.svg`}
+        alt={`${name} logo`}
+        width={120}
+        height={32}
+        className="max-h-8 w-auto max-w-[7.5rem] object-contain opacity-45 transition-all duration-300 group-hover:opacity-90 group-hover:drop-shadow-[0_0_10px_rgba(30,144,255,0.35)]"
+      />
+    </div>
   );
 }
 
@@ -67,22 +60,25 @@ export function TechnologyPartners({
                 delay: index * 0.04,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
+              className="flex"
             >
               <a
                 href={tech.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${tech.name} (opens in new tab)`}
                 className={cn(
-                  "group flex h-full min-h-[5.5rem] flex-col items-center justify-center rounded-2xl border px-4 py-5 transition-all duration-500 ease-out sm:min-h-[6.25rem] sm:px-5",
+                  "group flex w-full flex-col items-center justify-center rounded-2xl border px-4 py-6 transition-all duration-500 ease-out",
+                  "min-h-[7.5rem]",
                   isDark
-                    ? "border-white/[0.08] bg-white/[0.03] hover:-translate-y-0.5 hover:border-[#1E90FF]/25 hover:bg-white/[0.06] hover:shadow-[0_12px_40px_rgba(30,144,255,0.1)]"
-                    : "border-[#081826]/[0.06] bg-white/80 shadow-[0_1px_2px_rgba(8,24,38,0.04)] backdrop-blur-xl hover:-translate-y-0.5 hover:border-[#1E90FF]/20 hover:shadow-[0_12px_40px_rgba(30,144,255,0.08)]",
+                    ? "border-white/[0.08] bg-white/[0.03] hover:-translate-y-0.5 hover:border-[#1E90FF]/30 hover:bg-white/[0.05] hover:shadow-[0_0_28px_rgba(30,144,255,0.14)]"
+                    : "border-[#081826]/[0.06] bg-white/80 shadow-[0_1px_2px_rgba(8,24,38,0.04)] backdrop-blur-xl hover:-translate-y-0.5 hover:border-[#1E90FF]/25 hover:shadow-[0_0_28px_rgba(30,144,255,0.12)]",
                 )}
               >
-                <TechnologyLogo name={tech.name} logoSlug={tech.logoSlug} />
+                <TechnologyLogo name={tech.name} logoId={tech.logoId} />
                 <span
                   className={cn(
-                    "mt-3 text-center text-[10px] font-medium tracking-wide transition-colors duration-300 sm:text-[11px]",
+                    "mt-4 text-center text-[10px] font-medium leading-none tracking-wide transition-colors duration-300 sm:text-[11px]",
                     isDark
                       ? "text-white/35 group-hover:text-[#55D6FF]/80"
                       : "text-muted-foreground group-hover:text-[#1E90FF]",
