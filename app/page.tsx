@@ -9,6 +9,7 @@ import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { SolutionCard } from "@/components/sections/solution-card";
 import { Stats } from "@/components/sections/stats";
 import { Testimonials } from "@/components/sections/testimonials";
+import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { WhyOmnirexis } from "@/components/sections/why-omnirexis";
 import { CtaStrip } from "@/components/shared/cta-strip";
 import { Section } from "@/components/shared/section";
@@ -107,6 +108,8 @@ export default function HomePage() {
           />
         </FadeIn>
       </Section>
+
+      <TechnologyPartners className="section-light border-y border-[#081826]/[0.06]" />
 
       <Section className="section-dark relative overflow-hidden" ariaLabelledby="process-heading">
         <div className="ambient-glow pointer-events-none absolute inset-0" />

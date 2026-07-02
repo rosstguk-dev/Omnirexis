@@ -1,6 +1,7 @@
 import { SolutionCard } from "@/components/sections/solution-card";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
 import { Section } from "@/components/shared/section";
@@ -42,6 +43,8 @@ export default function SolutionsPage() {
           description="Most clients start with an AI Opportunity Audit. We'll recommend the right starting point based on your workflows, tools and commercial priorities — on a free strategy call."
         />
       </Section>
+
+      <TechnologyPartners className="border-t border-[#081826]/[0.06] bg-[#f6f8fb]/50" />
 
       <CtaBanner />
     </>
