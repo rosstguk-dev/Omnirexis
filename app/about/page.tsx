@@ -27,7 +27,7 @@ const principles = [
   {
     title: "What we don't do",
     description:
-      "We don't sell AI. We don't push platforms, chase trends, or implement technology for its own sake. Every recommendation exists because it creates measurable value for your business — full stop.",
+      "We don't sell AI and we don't develop proprietary software. We don't push platforms, chase trends, or implement technology for its own sake. Every recommendation exists because it creates measurable value for your business — full stop.",
   },
 ] as const;
 
@@ -44,8 +44,9 @@ export default function AboutPage() {
         <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="text-xl leading-relaxed tracking-[-0.01em] text-muted-foreground sm:text-2xl">
             Our role is simple: remove the noise, select what works, implement it
-            properly, and manage it so the results keep compounding. Practical AI
-            that solves real problems — nothing more, nothing less.
+            properly, and manage it so the results keep compounding. We configure
+            proven platforms — we never ask clients to fund custom software
+            development.
           </p>
         </FadeIn>
 

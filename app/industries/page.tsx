@@ -20,7 +20,7 @@ export default function IndustriesPage() {
       <PageHeader
         eyebrow="Industries"
         title="Implementation expertise for how your sector operates"
-        description="Generic automation fails. We assess your workflows, select the right technologies, and implement around the pressures and opportunities unique to your industry."
+        description="Generic automation fails. We assess your workflows, select the right platforms, and implement integrations around the pressures and opportunities unique to your industry."
       />
 
       <Section className="section-light" ariaLabelledby="sectors-heading">

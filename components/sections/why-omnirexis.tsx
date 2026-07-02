@@ -16,7 +16,7 @@ export function WhyOmnirexis() {
           <SectionHeading
             id="why-heading"
             eyebrow="Why Omnirexis"
-            title="We sell outcomes, not technology"
+            title="We deliver outcomes, not software"
             description={siteConfig.positioning}
             theme="dark"
           />

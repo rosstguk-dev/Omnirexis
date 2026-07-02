@@ -46,10 +46,11 @@ export function Hero() {
           </h1>
 
           <p className="prose-narrow mt-7 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-            We help businesses identify where AI creates value, implement
-            best-in-class technologies, integrate with existing systems, and
-            optimise for ongoing impact — saving time, reducing costs, growing
-            revenue, and improving every customer interaction.
+            A premium AI implementation consultancy. We identify where AI
+            creates value, configure best-in-class platforms, integrate with
+            your existing systems, and optimise for ongoing impact — saving
+            time, reducing costs, growing revenue, and improving every customer
+            interaction.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">

@@ -11,7 +11,7 @@ import { createMetadata, siteConfig, solutions } from "@/lib/site";
 export const metadata = createMetadata({
   title: "Flagship Services",
   description:
-    "Omnirexis offers four flagship services: AI Opportunity Audit, AI Voice Receptionists, Business Process Automation and AI Customer Experience — each designed to deliver measurable business outcomes.",
+    "Omnirexis offers four flagship services: AI Opportunity Audit, AI Voice Receptionists, Business Process Automation and AI Customer Experience — each delivered using proven AI platforms and designed for measurable business outcomes.",
   path: "/solutions",
 });
 
@@ -21,7 +21,7 @@ export default function SolutionsPage() {
       <PageHeader
         eyebrow="Solutions"
         title="Four flagship services built around your outcomes"
-        description="Each service is designed to solve a real business problem, deliver measurable results, and include ongoing support — without unnecessary complexity."
+        description="Each service solves a real business problem using established AI and automation platforms — with measurable results, clear implementation, and ongoing support."
       />
 
       <Section className="section-light" ariaLabelledby="capabilities-heading">

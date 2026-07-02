@@ -50,7 +50,7 @@ export function TechnologyPartners({
             id="technology-heading"
             eyebrow="Technology"
             title="Powered by Industry-Leading AI Technology"
-            description="Omnirexis carefully selects the world's leading AI platforms and integrates them into bespoke business solutions — chosen for fit, not favouritism."
+            description="Omnirexis carefully selects the world's leading AI platforms and integrates them into tailored business implementations — chosen for fit, not favouritism."
             theme={theme}
           />
         </FadeIn>

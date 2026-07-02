@@ -95,7 +95,7 @@ export function professionalServiceJsonLd() {
     "@type": "ProfessionalService",
     name: siteConfig.name,
     url: siteConfig.url,
-    description: `${siteConfig.description} We implement best-in-class AI technologies — we do not develop proprietary AI platforms.`,
+    description: `${siteConfig.description} We configure and integrate best-in-class AI platforms — we do not develop proprietary AI software.`,
     priceRange: "$$",
     areaServed: {
       "@type": "Country",

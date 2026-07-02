@@ -15,7 +15,7 @@ export function Testimonials() {
             id="testimonials-heading"
             eyebrow="Client results"
             title="Trusted by operators who measure what matters"
-            description="Leaders who chose expert implementation over hype — and saw it on the balance sheet."
+            description="Leaders who chose expert platform implementation over hype — and tracked the results."
             theme="dark"
           />
         </FadeIn>

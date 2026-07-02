@@ -31,9 +31,9 @@ export const siteConfig = {
   mission:
     "We help businesses identify AI opportunities, implement the right technologies, integrate them with existing systems, and optimise for lasting results — saving time, reducing costs, growing revenue and improving customer experience.",
   description:
-    "Omnirexis is a premium AI implementation and automation consultancy. We identify opportunities, design tailored solutions, implement best-in-class AI technologies, integrate with your existing systems, and deliver measurable business outcomes.",
+    "Omnirexis is a premium AI implementation, automation and integration consultancy. We identify opportunities, design practical implementation plans, configure best-in-class AI platforms, integrate with your existing systems, and deliver measurable business outcomes.",
   positioning:
-    "We don't build AI platforms. We select the best technologies for your business, implement them properly, and deliver outcomes you can measure — time saved, costs reduced, revenue grown, and customer experience improved.",
+    "We are not a software company. We select proven AI platforms, integrate them into your business, and deliver outcomes you can measure — time saved, costs reduced, revenue grown, and customer experience improved.",
   url: "https://omnirexis.com",
   email: "hello@omnirexis.com",
   phone: "07566 729429",
@@ -76,10 +76,10 @@ export const trustBadges = [
 ] as const;
 
 export const metrics = [
-  { value: "20+", label: "Hours saved per week", context: "Average across client engagements" },
-  { value: "35%", label: "Operational cost reduction", context: "Measured within 90 days of deployment" },
-  { value: "3×", label: "Faster lead response", context: "Compared to manual intake processes" },
-  { value: "60", label: "Days to positive ROI", context: "Median payback period across projects" },
+  { value: "20+", label: "Hours saved per week", context: "Commonly reported by clients; varies by scope" },
+  { value: "25–40%", label: "Operational cost reduction", context: "Typical range reported within 90 days of go-live" },
+  { value: "3×", label: "Faster lead response", context: "Frequently achieved vs. manual intake processes" },
+  { value: "60", label: "Days to positive ROI", context: "Typical payback period; modelled before you commit" },
 ] as const;
 
 export type Solution = {
@@ -101,7 +101,7 @@ export const solutions: Solution[] = [
     problem:
       "You know AI could help, but you're not sure where to start. Time is lost to manual work, leads go cold, and teams repeat the same tasks — without a clear picture of what automation is actually worth.",
     outcome:
-      "A prioritised roadmap showing exactly where AI will save time, cut costs and unlock new revenue — with projected returns for each opportunity, ranked by impact.",
+      "A prioritised roadmap showing where AI can save time, cut costs and unlock new revenue — with projected returns for each opportunity, ranked by impact.",
     process:
       "We review how your business operates, map your key workflows and quantify where time and money are being lost. You receive a clear, honest report — before any commitment to implement.",
     support:
@@ -111,13 +111,13 @@ export const solutions: Solution[] = [
     icon: Mic,
     title: "AI Voice Receptionists",
     summary:
-      "Intelligent AI receptionists that answer calls, qualify leads, answer common questions and book appointments 24/7.",
+      "We implement AI voice receptionists using leading platforms such as Retell AI, ElevenLabs and Twilio — answering calls, qualifying leads, handling common questions and booking appointments around the clock.",
     problem:
       "Calls go unanswered during busy periods, evenings and weekends. Leads hang up. Your team spends hours on routine enquiries instead of the work that actually grows the business.",
     outcome:
-      "Every call answered. Leads qualified automatically. Appointments booked without adding headcount. Your team handles only the conversations that genuinely need a human.",
+      "Calls handled around the clock — including busy periods, evenings and weekends. Leads qualified automatically. Appointments booked without adding headcount. Your team steps in only when a human is needed.",
     process:
-      "We assess your call flows, select the right voice AI for your business, configure it with your FAQs and booking rules, integrate with your calendar and CRM, and test thoroughly before go-live.",
+      "We assess your call flows, select the right voice AI platform for your business, configure it with your FAQs and booking rules, integrate with your calendar and CRM, and test thoroughly before go-live.",
     support:
       "We monitor call quality, update responses as your business changes, and refine routing so performance improves month on month.",
   },
@@ -125,13 +125,13 @@ export const solutions: Solution[] = [
     icon: Zap,
     title: "Business Process Automation",
     summary:
-      "Automate repetitive admin, emails, CRM updates, reporting, customer follow-ups and internal workflows.",
+      "We implement workflow automation using platforms such as n8n, Zapier and Make — connecting repetitive admin, emails, CRM updates, reporting, customer follow-ups and internal workflows.",
     problem:
       "Your team loses hours every week to repetitive admin — updating spreadsheets, sending follow-up emails, copying data between systems and preparing reports that nobody should be doing by hand.",
     outcome:
-      "Twenty or more hours returned to your team each week. Fewer errors. Faster follow-ups. Lower operational costs — without sacrificing quality.",
+      "Clients commonly recover significant weekly hours. Fewer manual errors. Faster follow-ups. Lower operational costs — without sacrificing quality.",
     process:
-      "We map your repetitive workflows, identify the highest-impact automations, connect your existing tools and deploy step by step — always starting with what delivers returns fastest.",
+      "We map your repetitive workflows, identify the highest-impact automations, connect your existing tools via proven integration platforms and roll out step by step — always starting with what delivers returns fastest.",
     support:
       "We monitor your automations, fix bottlenecks and expand what's working. As your business changes, your workflows evolve with it.",
   },
@@ -139,13 +139,13 @@ export const solutions: Solution[] = [
     icon: Headphones,
     title: "AI Customer Experience",
     summary:
-      "Implement AI chat, knowledge assistants and automated customer support to improve response times and customer satisfaction.",
+      "We implement AI chat, knowledge assistants and automated customer support using established platforms — improving response times and customer satisfaction across the channels you already use.",
     problem:
       "Customers wait too long for answers. Support teams are overwhelmed with the same questions. Slow response times damage satisfaction — and cost you sales.",
     outcome:
-      "Faster responses, higher satisfaction scores and more enquiries converted — without hiring more support staff.",
+      "Faster responses, improved satisfaction and more enquiries handled efficiently — without proportional increases in support headcount.",
     process:
-      "We review your customer touchpoints, implement chat and knowledge tools suited to your business, connect them to your existing support channels and configure them around your products and policies.",
+      "We review your customer touchpoints, select suitable chat and knowledge platforms, connect them to your existing support channels and configure them around your products, policies and brand voice.",
     support:
       "We track resolution rates and satisfaction, update content as your business changes and continuously improve how your customers are served.",
   },
@@ -163,70 +163,70 @@ export const industries: Industry[] = [
     icon: Building2,
     title: "Construction",
     description:
-      "Coordinate subcontractors, automate quote follow-ups and keep site reporting flowing — without the admin burden.",
+      "We implement tools to coordinate subcontractors, automate quote follow-ups and keep site reporting flowing — without the admin burden.",
     highlight: "Project coordination · Quote automation",
   },
   {
     icon: Wrench,
     title: "Trades",
     description:
-      "Capture every enquiry with voice AI, book jobs through chat and automate dispatch, invoicing and customer updates.",
+      "We implement voice AI and workflow automation to capture enquiries, book jobs, and streamline dispatch, invoicing and customer updates.",
     highlight: "Call handling · Job booking",
   },
   {
     icon: Factory,
     title: "Manufacturing",
     description:
-      "Streamline supply chain communications, quality reporting, inventory alerts and internal knowledge access.",
+      "We integrate automation across supply chain communications, quality reporting, inventory alerts and internal knowledge access.",
     highlight: "Supply chain · Quality reporting",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
     description:
-      "Automate patient intake, appointment scheduling and routine enquiries — reducing admin while protecting care quality.",
+      "We implement patient intake, appointment scheduling and routine enquiry automation — reducing admin while protecting care quality.",
     highlight: "Patient intake · Scheduling",
   },
   {
     icon: Scale,
     title: "Professional Services",
     description:
-      "Accelerate client onboarding, document preparation and follow-up sequences so your team stays focused on billable work.",
+      "We implement client onboarding, document preparation and follow-up automation so your team stays focused on billable work.",
     highlight: "Onboarding · Document automation",
   },
   {
     icon: ChefHat,
     title: "Hospitality",
     description:
-      "Manage reservations, guest enquiries and review responses — elevating every touchpoint without stretching your team.",
+      "We implement reservation handling, guest enquiry automation and review response workflows — elevating every touchpoint without stretching your team.",
     highlight: "Reservations · Guest communications",
   },
   {
     icon: Dumbbell,
     title: "Fitness",
     description:
-      "Handle membership enquiries, class bookings and retention follow-ups — keeping your pipeline full and members engaged.",
+      "We implement membership enquiry handling, class booking automation and retention follow-ups — keeping your pipeline full and members engaged.",
     highlight: "Membership · Retention",
   },
   {
     icon: ShoppingBag,
     title: "Retail",
     description:
-      "Resolve product enquiries, automate order updates and run personalised follow-up campaigns that drive repeat revenue.",
+      "We implement product enquiry handling, order update automation and personalised follow-up campaigns that drive repeat revenue.",
     highlight: "Enquiries · Order automation",
   },
   {
     icon: Home,
     title: "Property",
     description:
-      "Schedule viewings, triage tenant requests and qualify sales and lettings leads — automatically and around the clock.",
+      "We implement viewing scheduling, tenant request triage and lead qualification — working around the clock via proven AI and automation platforms.",
     highlight: "Viewings · Lead qualification",
   },
   {
     icon: Car,
     title: "Automotive",
     description:
-      "Automate service bookings, parts enquiries and sales follow-up across every customer touchpoint in your dealership.",
+      "We implement service booking, parts enquiry handling and sales follow-up automation across every customer touchpoint in your dealership.",
     highlight: "Service booking · Sales pipeline",
   },
 ];
@@ -281,7 +281,7 @@ export const whyOmnirexis = [
     icon: LineChart,
     title: "Increase Revenue",
     description:
-      "Respond faster, nurture smarter and convert more — with AI working across your entire commercial funnel.",
+      "Respond faster, nurture smarter and convert more — with proven AI tools integrated across your commercial funnel.",
   },
   {
     icon: HeartPulse,
@@ -311,7 +311,7 @@ export const whyOmnirexis = [
     icon: Sparkles,
     title: "Speed to Value",
     description:
-      "Most clients see measurable impact within weeks. We implement for commercial results, not endless configuration.",
+      "Clients often see measurable impact within weeks. We implement using established platforms — focused on commercial results, not endless configuration.",
   },
   {
     icon: Target,
@@ -324,27 +324,27 @@ export const whyOmnirexis = [
 export const testimonials = [
   {
     quote:
-      "Within three weeks, Omnirexis implemented automation across our entire lead intake pipeline. Response times dropped from two days to under fifteen minutes — and we closed 28% more business that quarter.",
+      "Omnirexis implemented lead routing and follow-up automation using our existing CRM — no custom software, no platform migration. Response times improved dramatically and our sales team finally focuses on conversations that convert.",
     author: "James Whitfield",
     role: "Chief Executive",
     company: "Northline Logistics",
-    result: "+28% close rate",
+    result: "Faster lead response",
   },
   {
     quote:
-      "They integrated the right support tools and configured them around our workflows. Seven in ten tickets now resolve without human intervention — our team finally handles the cases that actually need them.",
+      "They selected the right support platforms and integrated them around how we already work. A large share of routine enquiries now resolve automatically — our team handles the cases that genuinely need them.",
     author: "Priya Nair",
     role: "Chief Operating Officer",
     company: "Summit Health Group",
-    result: "70% tickets automated",
+    result: "Reduced ticket volume",
   },
   {
     quote:
-      "The CRM automation paid for the entire engagement within sixty days. Omnirexis thinks like operators, not software vendors — that's genuinely rare in this industry.",
+      "The CRM automation paid for itself quickly. Omnirexis thinks like operators, not software vendors — they implement what works and manage it properly.",
     author: "Daniel Ortiz",
     role: "Founder",
     company: "Brightpath Retail",
-    result: "60-day payback",
+    result: "Rapid payback",
   },
 ] as const;
 
@@ -357,7 +357,7 @@ export const faqs = [
   {
     question: "Do you build your own AI software?",
     answer:
-      "No.\n\nWe specialise in selecting, implementing and managing the world's leading AI technologies to create bespoke business solutions.\n\nThis approach allows us to deliver proven, reliable and scalable systems without our clients funding unnecessary software development.",
+      "No.\n\nWe specialise in selecting, implementing and managing the world's leading AI technologies to deliver tailored business implementations.\n\nThis approach allows us to configure proven, reliable and scalable solutions using existing platforms — without our clients funding unnecessary software development.",
   },
   {
     question: "How long does implementation take?",
@@ -367,7 +367,7 @@ export const faqs = [
   {
     question: "Do I need technical knowledge?",
     answer:
-      "No. We own the full implementation lifecycle — opportunity assessment, solution design, integration and deployment. You contribute business context; we handle the technology. Your team receives hands-on training and documentation written for operators, not developers.",
+      "No. We manage the full implementation lifecycle — opportunity assessment, solution design, platform configuration, integration and deployment. You contribute business context; we handle the technology selection and setup. Your team receives hands-on training and documentation written for operators, not developers.",
   },
   {
     question: "Will AI replace my staff?",
@@ -382,7 +382,7 @@ export const faqs = [
   {
     question: "How much can automation save?",
     answer:
-      "Results vary by business, but clients typically recover twenty or more hours per week, reduce operational costs by twenty-five to forty percent, and see revenue impact within sixty days. We model projected returns during your AI Opportunity Audit before any commitment.",
+      "Results vary by business and scope. Many clients recover significant weekly hours, reduce operational costs materially, and see commercial impact within the first few months. We model projected returns during your AI Opportunity Audit before any commitment — so expectations are clear upfront.",
   },
   {
     question: "Do you offer ongoing support?",

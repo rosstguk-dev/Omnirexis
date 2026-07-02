@@ -11,11 +11,11 @@ export function Stats() {
       <div className="section-container">
         <FadeIn className="mb-12 text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#1E90FF]">
-            Proven impact
+            Typical client outcomes
           </p>
           <p className="prose-narrow mx-auto mt-3 text-sm text-muted-foreground">
-            Aggregate results across Omnirexis client engagements. Your outcomes
-            will depend on scope — we model projections before you commit.
+            Illustrative results from client engagements. Outcomes vary by scope
+            and starting point — we model projections before you commit.
           </p>
         </FadeIn>
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4">

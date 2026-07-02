@@ -27,7 +27,7 @@ import { createMetadata, industries, solutions } from "@/lib/site";
 export const metadata = createMetadata({
   title: "AI Implementation & Automation Consultancy",
   description:
-    "Omnirexis is a premium AI implementation consultancy. We identify opportunities, implement best-in-class technologies, integrate with your systems, and deliver measurable outcomes — time saved, costs reduced, revenue grown. Book your free AI Strategy Call.",
+    "Omnirexis is a premium AI implementation, automation and integration consultancy. We identify opportunities, configure best-in-class platforms, integrate with your systems, and deliver measurable outcomes — time saved, costs reduced, revenue grown. Book your free AI Strategy Call.",
   path: "/",
 });
 

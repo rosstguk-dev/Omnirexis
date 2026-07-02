@@ -19,7 +19,7 @@ const sections = [
   },
   {
     title: "Intellectual property",
-    body: `All content on this website — including text, graphics, logos, imagery and software — is the property of ${siteConfig.legalName} or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute or create derivative works without our prior written consent.`,
+    body: `All content on this website — including text, graphics, logos and imagery — is the property of ${siteConfig.legalName} or its licensors and is protected by applicable intellectual property laws. Third-party platform names and logos belong to their respective owners. You may not reproduce, distribute or create derivative works without our prior written consent.`,
   },
   {
     title: "Consultancy services",
