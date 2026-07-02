@@ -4,30 +4,30 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { CtaButton } from "@/components/shared/cta-button";
 import { Section } from "@/components/shared/section";
 import { GlassCard } from "@/components/visuals/glass-card";
-import { createMetadata, siteConfig } from "@/lib/site";
+import { createMetadata } from "@/lib/site";
 
 export const metadata = createMetadata({
   title: "About Omnirexis",
   description:
-    "Omnirexis is a premium AI implementation and automation consultancy. We identify opportunities, implement best-in-class technologies, and deliver measurable commercial outcomes — not software.",
+    "Omnirexis exists because most businesses know AI is important but don't know where to start. We remove complexity, implement practical AI solutions, and deliver measurable outcomes — not technology for its own sake.",
   path: "/about",
 });
 
 const principles = [
   {
-    title: "Outcomes first, always",
+    title: "The problem we solve",
     description:
-      "We begin with commercial challenges — lost time, missed leads, rising costs — and work backwards to the right implementation. Technology serves the outcome, never the other way around.",
+      "Most businesses know AI is important. They see competitors moving faster, teams buried in repetitive work, and customers expecting instant responses — yet they don't know where to start, what to trust, or what will actually pay off.",
   },
   {
-    title: "Best-in-class, never proprietary",
+    title: "What we do",
     description:
-      "We don't build AI platforms. We carefully evaluate the market, select the best technologies for each client's needs, and implement them within your existing environment.",
+      "We remove that complexity. Omnirexis selects the right AI technologies, implements them within your existing systems, and manages them so they keep delivering — solving real business problems without unnecessary disruption.",
   },
   {
-    title: "Measure everything that matters",
+    title: "What we don't do",
     description:
-      "Hours saved, costs reduced, revenue gained, satisfaction improved. If an implementation can't be measured, it doesn't belong in our roadmap.",
+      "We don't sell AI. We don't push platforms, chase trends, or implement technology for its own sake. Every recommendation exists because it creates measurable value for your business — full stop.",
   },
 ] as const;
 
@@ -36,14 +36,16 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Intelligence. Automated."
-        description={siteConfig.mission}
+        title="We don't sell AI. We deliver outcomes."
+        description="Omnirexis exists because most businesses know AI is important — but don't know where to start. We're here to change that."
       />
 
       <Section>
         <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="text-xl leading-relaxed tracking-[-0.01em] text-muted-foreground sm:text-2xl">
-            {siteConfig.positioning}
+            Our role is simple: remove the noise, select what works, implement it
+            properly, and manage it so the results keep compounding. Practical AI
+            that solves real problems — nothing more, nothing less.
           </p>
         </FadeIn>
 
@@ -65,13 +67,13 @@ export default function AboutPage() {
         <FadeIn className="relative mt-20 overflow-hidden rounded-3xl bg-[#081826] p-10 text-center sm:p-16">
           <div className="ambient-glow pointer-events-none absolute inset-0" />
           <h2 className="relative text-2xl font-bold tracking-[-0.02em] text-white sm:text-3xl">
-            Your implementation partner — not another software vendor.
+            Everything we implement earns its place.
           </h2>
           <p className="relative prose-narrow mx-auto mt-5 max-w-2xl text-white/50">
-            Omnirexis was founded on a single conviction: growing businesses
-            deserve expert help implementing AI — identifying the right
-            opportunities, selecting the right tools, integrating with existing
-            systems, and optimising for results that show up on your bottom line.
+            We are selective by design. Every tool, workflow and integration we
+            recommend is chosen because it creates measurable value — time saved,
+            costs reduced, revenue grown, or customer experience improved. If it
+            can&apos;t be measured, it doesn&apos;t make the cut.
           </p>
           <div className="relative mt-8">
             <CtaButton />
