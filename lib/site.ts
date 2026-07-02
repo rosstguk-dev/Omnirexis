@@ -30,11 +30,11 @@ export const siteConfig = {
   legalName: "Omnirexis Inc.",
   tagline: "Intelligence. Automated.",
   mission:
-    "Helping businesses save time, reduce costs, increase revenue and improve customer experience through practical AI automation.",
+    "We help businesses identify AI opportunities, implement the right technologies, integrate them with existing systems, and optimise for lasting results — saving time, reducing costs, growing revenue and improving customer experience.",
   description:
-    "Omnirexis is an AI automation consultancy that helps growing businesses implement practical AI — saving time, reducing costs, improving customer experience and unlocking measurable growth.",
+    "Omnirexis is a premium AI implementation and automation consultancy. We identify opportunities, design tailored solutions, implement best-in-class AI technologies, integrate with your existing systems, and deliver measurable business outcomes.",
   positioning:
-    "We don't sell AI. We sell time savings, efficiency, customer experience improvements and business growth.",
+    "We don't build AI platforms. We select the best technologies for your business, implement them properly, and deliver outcomes you can measure — time saved, costs reduced, revenue grown, and customer experience improved.",
   url: "https://omnirexis.com",
   email: "hello@omnirexis.com",
   phone: "07566 729429",
@@ -45,16 +45,16 @@ export const siteConfig = {
   ctaHref: "/contact",
   ctaMicrocopy: "30-minute call · Senior strategist · No obligation",
   keywords: [
+    "AI implementation consultancy",
     "AI automation consultancy",
     "business process automation",
-    "AI chatbots for business",
-    "workflow automation",
-    "AI voice receptionist",
-    "lead qualification automation",
-    "customer support automation",
-    "sales automation",
+    "AI integration services",
+    "workflow automation consulting",
+    "AI strategy consulting",
+    "customer experience automation",
+    "sales automation consulting",
     "AI consulting San Francisco",
-    "SMB AI automation",
+    "SMB AI implementation",
   ],
 };
 
@@ -69,11 +69,11 @@ export const navLinks = [
 ] as const;
 
 export const trustBadges = [
-  "AI Automation",
-  "Business Growth",
-  "Customer Experience",
-  "Workflow Optimisation",
-  "Operational Efficiency",
+  "AI Implementation",
+  "Measurable Outcomes",
+  "System Integration",
+  "Ongoing Optimisation",
+  "Business-First Consulting",
 ] as const;
 
 export const metrics = [
@@ -96,7 +96,7 @@ export const solutions: Solution[] = [
     icon: Bot,
     title: "AI Chatbots",
     summary:
-      "Conversational agents trained on your business, live across web, messaging and social — 24 hours a day.",
+      "We implement conversational AI using leading platforms — configured on your business, deployed across web, messaging and social around the clock.",
     benefits:
       "Capture leads the moment they arrive, resolve routine enquiries without wait times, and give every visitor a consistent, on-brand experience.",
     outcome: "3× faster response · Always on",
@@ -105,7 +105,7 @@ export const solutions: Solution[] = [
     icon: Mic,
     title: "AI Voice Receptionists",
     summary:
-      "Natural voice AI that answers calls, routes enquiries, books appointments and handles requests with clarity and professionalism.",
+      "We integrate proven voice AI that answers calls, routes enquiries, books appointments and handles requests with clarity and professionalism.",
     benefits:
       "Every call gets answered — peak hours, evenings and weekends included. Your team receives only the conversations that need a human.",
     outcome: "Zero missed calls · Intelligent routing",
@@ -114,7 +114,7 @@ export const solutions: Solution[] = [
     icon: Zap,
     title: "Workflow Automation",
     summary:
-      "End-to-end automation across operations, finance, admin and internal communications — built around how your team actually works.",
+      "We connect and automate operations, finance, admin and internal communications — mapped to how your team actually works, using the right tools for each workflow.",
     benefits:
       "Remove manual handoffs, cut processing errors and return hours to your team every single week.",
     outcome: "20+ hours recovered weekly",
@@ -123,7 +123,7 @@ export const solutions: Solution[] = [
     icon: Target,
     title: "Lead Qualification",
     summary:
-      "Automated scoring, routing and nurturing that surfaces your best opportunities and advances them through the pipeline.",
+      "We implement automated scoring, routing and nurturing that surfaces your best opportunities and advances them through the pipeline.",
     benefits:
       "Sales spends time on deals that matter. Follow-ups happen on time. Nothing falls through the cracks.",
     outcome: "40% more qualified pipeline",
@@ -132,7 +132,7 @@ export const solutions: Solution[] = [
     icon: Headphones,
     title: "Customer Support Automation",
     summary:
-      "Intelligent triage, automated resolution and smart escalation woven into your existing support workflow.",
+      "We integrate intelligent triage, automated resolution and smart escalation into your existing support workflow — no rip-and-replace required.",
     benefits:
       "Routine tickets resolve instantly. Agents focus on complex cases. Satisfaction scores climb without adding headcount.",
     outcome: "70% of tickets handled automatically",
@@ -141,7 +141,7 @@ export const solutions: Solution[] = [
     icon: Sparkles,
     title: "Internal AI Assistants",
     summary:
-      "Private, secure AI tools for document drafting, knowledge retrieval, meeting summaries and day-to-day internal tasks.",
+      "We deploy private, secure AI assistants for document drafting, knowledge retrieval, meeting summaries and day-to-day internal tasks.",
     benefits:
       "Accelerate how your team works — without exposing sensitive data or forcing a platform migration.",
     outcome: "Faster decisions · Less admin",
@@ -150,7 +150,7 @@ export const solutions: Solution[] = [
     icon: TrendingUp,
     title: "Sales Automation",
     summary:
-      "Automated follow-ups, proposal support, CRM updates and pipeline management across the full sales cycle.",
+      "We implement automated follow-ups, proposal support, CRM updates and pipeline management across the full sales cycle.",
     benefits:
       "Consistent outreach at scale. No dropped leads. A sales engine that grows without proportional hiring.",
     outcome: "28% higher close rates",
@@ -159,9 +159,9 @@ export const solutions: Solution[] = [
     icon: Cog,
     title: "Business Process Optimisation",
     summary:
-      "Holistic redesign of core processes — analysed, automated and continuously improved with AI at the centre.",
+      "We analyse core processes, identify where AI creates the most value, and implement improvements that compound over time.",
     benefits:
-      "Eliminate operational waste, increase throughput and build systems that get smarter over time.",
+      "Eliminate operational waste, increase throughput and remove the repetitive work that quietly erodes your margins.",
     outcome: "35% average cost reduction",
   },
 ];
@@ -251,31 +251,31 @@ export const processSteps = [
     step: "01",
     title: "Discovery Call",
     description:
-      "A focused conversation to understand how your business operates, where time is being lost and which outcomes matter most.",
+      "A focused conversation to understand how your business operates, where time is being lost and which commercial outcomes matter most.",
   },
   {
     step: "02",
     title: "AI Opportunity Audit",
     description:
-      "We map your workflows, quantify the commercial impact of manual processes and prioritise automations by ROI.",
+      "We map your workflows, quantify the cost of manual processes and prioritise the automations with the strongest return on investment.",
   },
   {
     step: "03",
     title: "Solution Design",
     description:
-      "A bespoke strategy document — scope, architecture, integrations, timeline and projected returns. No ambiguity.",
+      "A tailored implementation plan — recommended technologies, integrations, timeline and projected returns. Every decision tied to a business outcome.",
   },
   {
     step: "04",
     title: "Implementation",
     description:
-      "Our engineers build, test and deploy production-grade systems integrated with the tools your team already uses.",
+      "We configure, integrate and deploy the right AI tools within your existing stack — tested, documented and ready for your team to use with confidence.",
   },
   {
     step: "05",
     title: "Optimisation",
     description:
-      "We monitor performance, refine what works and expand your automation footprint — so value compounds over time.",
+      "We monitor performance, refine what works and expand your automation footprint — so value compounds long after go-live.",
   },
 ] as const;
 
@@ -312,21 +312,21 @@ export const whyOmnirexis = [
   },
   {
     icon: Cog,
-    title: "Scalable Solutions",
+    title: "Right-Sized Technology",
     description:
-      "Infrastructure designed to grow with you — from a single workflow to enterprise-scale operations.",
+      "We select and implement tools that fit your scale today and grow with you — never overselling platforms you don't need.",
   },
   {
     icon: Users,
     title: "Human Support",
     description:
-      "Senior strategists and engineers who know your business — not a ticket queue or a chatbot.",
+      "Senior strategists and implementation specialists who know your business — not a ticket queue or a chatbot.",
   },
   {
     icon: Sparkles,
-    title: "Rapid Deployment",
+    title: "Speed to Value",
     description:
-      "Most clients see measurable impact within weeks. We engineer for speed to value, not perfection paralysis.",
+      "Most clients see measurable impact within weeks. We implement for commercial results, not endless configuration.",
   },
   {
     icon: Target,
@@ -339,7 +339,7 @@ export const whyOmnirexis = [
 export const testimonials = [
   {
     quote:
-      "Within three weeks, Omnirexis automated our entire lead intake pipeline. Response times dropped from two days to under fifteen minutes — and we closed 28% more business that quarter.",
+      "Within three weeks, Omnirexis implemented automation across our entire lead intake pipeline. Response times dropped from two days to under fifteen minutes — and we closed 28% more business that quarter.",
     author: "James Whitfield",
     role: "Chief Executive",
     company: "Northline Logistics",
@@ -347,7 +347,7 @@ export const testimonials = [
   },
   {
     quote:
-      "They built a support system that resolves seven in ten tickets without human intervention. Our team finally has the bandwidth to handle the cases that actually need them.",
+      "They integrated the right support tools and configured them around our workflows. Seven in ten tickets now resolve without human intervention — our team finally handles the cases that actually need them.",
     author: "Priya Nair",
     role: "Chief Operating Officer",
     company: "Summit Health Group",
@@ -355,7 +355,7 @@ export const testimonials = [
   },
   {
     quote:
-      "The CRM automation paid for the entire engagement within sixty days. Omnirexis thinks like operators — that's genuinely rare in this industry.",
+      "The CRM automation paid for the entire engagement within sixty days. Omnirexis thinks like operators, not software vendors — that's genuinely rare in this industry.",
     author: "Daniel Ortiz",
     role: "Founder",
     company: "Brightpath Retail",
@@ -367,17 +367,22 @@ export const faqs = [
   {
     question: "What businesses benefit most from AI automation?",
     answer:
-      "Any organisation losing time to repetitive tasks, slow lead response, manual customer support or disconnected systems. We partner with small and mid-market businesses across construction, healthcare, retail, professional services and more — wherever practical automation delivers measurable commercial value.",
+      "Any organisation losing time to repetitive tasks, slow lead response, manual customer support or disconnected systems. We partner with small and mid-market businesses across construction, healthcare, retail, professional services and more — wherever practical implementation delivers measurable commercial value.",
+  },
+  {
+    question: "Do you build your own AI software?",
+    answer:
+      "No. Omnirexis is an implementation consultancy, not a software company. We evaluate the market, select the best-fit AI technologies for your requirements, and implement them within your business. You benefit from enterprise-grade tools without building or maintaining proprietary systems.",
   },
   {
     question: "How long does implementation take?",
     answer:
-      "Focused automations such as chatbots or lead routing typically go live within two to four weeks. More complex workflow systems take six to ten weeks. We always deploy high-impact solutions first, so you see returns while the broader roadmap takes shape.",
+      "Focused implementations such as chatbots or lead routing typically go live within two to four weeks. More complex workflow integrations take six to ten weeks. We always deploy high-impact solutions first, so you see returns while the broader roadmap takes shape.",
   },
   {
     question: "Do I need technical knowledge?",
     answer:
-      "No. We own the full technical lifecycle — design, build, integration and deployment. You contribute business context; we contribute engineering. Your team receives hands-on training and documentation written for operators, not developers.",
+      "No. We own the full implementation lifecycle — opportunity assessment, solution design, integration and deployment. You contribute business context; we handle the technology. Your team receives hands-on training and documentation written for operators, not developers.",
   },
   {
     question: "Will AI replace my staff?",
@@ -387,7 +392,7 @@ export const faqs = [
   {
     question: "Can AI integrate with our existing software?",
     answer:
-      "Yes. We connect to the platforms you already run — HubSpot, Salesforce, Zendesk, Slack, Google Workspace, Shopify, Xero and hundreds more. We enhance your stack; we don't ask you to replace it.",
+      "Yes — and we insist on it. We connect to the platforms you already run — HubSpot, Salesforce, Zendesk, Slack, Google Workspace, Shopify, Xero and hundreds more. We enhance your stack; we never ask you to replace it.",
   },
   {
     question: "How much can automation save?",
@@ -397,7 +402,7 @@ export const faqs = [
   {
     question: "Do you offer ongoing support?",
     answer:
-      "Every engagement includes post-launch optimisation. We monitor performance, tune automations and expand what's working. You have direct access to your strategist and engineering team — not a generic help desk.",
+      "Every engagement includes post-launch optimisation. We monitor performance, tune automations and expand what's working. You have direct access to your strategist and implementation team — not a generic help desk.",
   },
   {
     question: "How do we get started?",
@@ -407,7 +412,7 @@ export const faqs = [
   {
     question: "What happens on the strategy call?",
     answer:
-      "A senior Omnirexis strategist maps your current workflows, quantifies where time and margin are being lost, and recommends automations ranked by commercial impact. You leave with clarity — and a concrete next step if you choose to proceed.",
+      "A senior Omnirexis strategist maps your current workflows, quantifies where time and margin are being lost, and recommends implementations ranked by commercial impact. You leave with clarity — and a concrete next step if you choose to proceed.",
   },
   {
     question: "Is our business data secure?",

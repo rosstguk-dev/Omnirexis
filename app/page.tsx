@@ -24,9 +24,9 @@ import {
 import { createMetadata, industries, solutions } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "AI Automation Consultancy",
+  title: "AI Implementation & Automation Consultancy",
   description:
-    "Omnirexis helps businesses automate repetitive work, reduce costs, improve customer experience and unlock growth with practical AI solutions. Book your free AI Strategy Call.",
+    "Omnirexis is a premium AI implementation consultancy. We identify opportunities, implement best-in-class technologies, integrate with your systems, and deliver measurable outcomes — time saved, costs reduced, revenue grown. Book your free AI Strategy Call.",
   path: "/",
 });
 
@@ -49,8 +49,8 @@ export default function HomePage() {
           <SectionHeading
             id="solutions-heading"
             eyebrow="Solutions"
-            title="Intelligent automation for every part of your business"
-            description="From customer-facing AI to internal workflow engines — each capability is engineered for measurable commercial impact."
+            title="AI implementations tailored to how your business operates"
+            description="From customer-facing automation to internal workflow improvements — every engagement is scoped to measurable commercial outcomes, not technology for its own sake."
           />
         </FadeIn>
         <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -60,7 +60,7 @@ export default function HomePage() {
         </div>
         <CtaStrip
           title="Not sure where to begin?"
-          description="On a strategy call, we'll identify the two or three automations that will deliver the fastest return for your specific business."
+          description="On a strategy call, we'll identify the two or three implementations that will deliver the fastest return for your specific business."
         />
         <FadeIn className="mt-8 text-center">
           <Button
@@ -84,7 +84,7 @@ export default function HomePage() {
             id="industries-heading"
             eyebrow="Industries"
             title="Sector expertise. Universal standards."
-            description="We bring deep operational understanding to the industries where automation delivers the clearest, fastest ROI."
+            description="We bring deep operational understanding to the industries where AI implementation delivers the clearest, fastest ROI."
           />
         </FadeIn>
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

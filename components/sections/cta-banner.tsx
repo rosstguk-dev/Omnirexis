@@ -15,13 +15,13 @@ export function CtaBanner() {
                 id="cta-heading"
                 className="text-[2rem] font-bold leading-[1.12] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl"
               >
-                The businesses that automate first
+                The businesses that implement AI first
                 <br className="hidden sm:block" /> pull ahead. Permanently.
               </h2>
               <p className="prose-narrow mx-auto mt-5 max-w-xl text-base text-white/50 sm:text-lg">
                 Book a free AI Strategy Call with a senior Omnirexis
-                strategist. Understand what automation is worth to your
-                business — before you spend a dollar.
+                strategist. Understand what the right implementation is worth to
+                your business — before you spend a dollar.
               </p>
               <div className="mt-9 flex flex-col items-center gap-3">
                 <CtaButton />

@@ -10,7 +10,7 @@ import { createMetadata, industries } from "@/lib/site";
 export const metadata = createMetadata({
   title: "Industries",
   description:
-    "Omnirexis delivers AI automation for construction, trades, manufacturing, healthcare, professional services, hospitality, fitness, retail, property and automotive businesses.",
+    "Omnirexis implements AI automation for construction, trades, manufacturing, healthcare, professional services, hospitality, fitness, retail, property and automotive businesses — tailored to each sector's workflows and commercial priorities.",
   path: "/industries",
 });
 
@@ -19,8 +19,8 @@ export default function IndustriesPage() {
     <>
       <PageHeader
         eyebrow="Industries"
-        title="Built for how your sector actually operates"
-        description="Generic automation fails. We design around the workflows, pressures and opportunities unique to your industry."
+        title="Implementation expertise for how your sector operates"
+        description="Generic automation fails. We assess your workflows, select the right technologies, and implement around the pressures and opportunities unique to your industry."
       />
 
       <Section className="section-light" ariaLabelledby="sectors-heading">
@@ -29,7 +29,7 @@ export default function IndustriesPage() {
             id="sectors-heading"
             eyebrow="Sectors"
             title="Ten industries. One commitment to ROI."
-            description="Whether you run job sites, clinics or e-commerce operations — we build automation that fits your reality."
+            description="Whether you run job sites, clinics or e-commerce operations — we implement automation that fits your reality and integrates with the tools you already use."
           />
         </FadeIn>
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

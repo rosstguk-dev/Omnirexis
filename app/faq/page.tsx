@@ -8,7 +8,7 @@ import { createMetadata } from "@/lib/site";
 export const metadata = createMetadata({
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about Omnirexis AI automation — implementation, integrations, ROI, support, security and getting started.",
+    "Answers to common questions about Omnirexis AI implementation — technology selection, integrations, ROI, ongoing optimisation, security and getting started.",
   path: "/faq",
 });
 

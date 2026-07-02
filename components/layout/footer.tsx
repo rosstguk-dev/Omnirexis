@@ -12,11 +12,11 @@ export function Footer() {
         <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 sm:flex sm:items-center sm:justify-between sm:p-10">
           <div>
             <p className="text-lg font-semibold tracking-[-0.01em] text-white sm:text-xl">
-              Ready to see what automation is worth to you?
+              Ready to see what AI implementation is worth to you?
             </p>
             <p className="mt-2 max-w-md text-sm text-white/45">
-              Book a free strategy call. Walk away with a prioritised roadmap —
-              whether you work with us or not.
+              Book a free strategy call. Walk away with a prioritised
+              implementation roadmap — whether you work with us or not.
             </p>
           </div>
           <CtaButton className="mt-6 shrink-0 sm:mt-0" size="default" />

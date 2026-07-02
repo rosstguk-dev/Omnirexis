@@ -41,14 +41,15 @@ export function Hero() {
             id="hero-heading"
             className="text-[2.5rem] font-bold leading-[1.06] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl xl:text-[4.25rem]"
           >
-            The Future of Business Runs on{" "}
-            <span className="text-gradient">AI.</span>
+            AI Implementation That Delivers{" "}
+            <span className="text-gradient">Real Results.</span>
           </h1>
 
           <p className="prose-narrow mt-7 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-            Helping businesses automate repetitive work, reduce costs, improve
-            customer experience and unlock growth — through practical AI
-            solutions that deliver measurable results.
+            We help businesses identify where AI creates value, implement
+            best-in-class technologies, integrate with existing systems, and
+            optimise for ongoing impact — saving time, reducing costs, growing
+            revenue, and improving every customer interaction.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">

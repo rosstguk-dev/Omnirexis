@@ -43,7 +43,7 @@ export function WhyOmnirexis() {
         <CtaStrip
           theme="dark"
           title="See which outcomes are within reach for your business"
-          description="A thirty-minute strategy call is all it takes to identify your highest-value automation opportunities."
+          description="A thirty-minute strategy call is all it takes to identify your highest-value AI implementation opportunities."
         />
       </div>
     </section>

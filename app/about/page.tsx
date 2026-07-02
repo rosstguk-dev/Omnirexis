@@ -9,25 +9,25 @@ import { createMetadata, siteConfig } from "@/lib/site";
 export const metadata = createMetadata({
   title: "About Omnirexis",
   description:
-    "Omnirexis believes AI should remove friction from businesses rather than create complexity. Practical automation that delivers measurable commercial value.",
+    "Omnirexis is a premium AI implementation and automation consultancy. We identify opportunities, implement best-in-class technologies, and deliver measurable commercial outcomes — not software.",
   path: "/about",
 });
 
 const principles = [
   {
-    title: "Remove friction, not add complexity",
+    title: "Outcomes first, always",
     description:
-      "AI should simplify how your business runs. We design systems your team adopts confidently — without disruptive platform migrations or steep learning curves.",
+      "We begin with commercial challenges — lost time, missed leads, rising costs — and work backwards to the right implementation. Technology serves the outcome, never the other way around.",
   },
   {
-    title: "Solve problems, not sell technology",
+    title: "Best-in-class, never proprietary",
     description:
-      "We begin with commercial challenges — lost time, missed leads, rising costs — and engineer backwards to the right automation. The technology serves the outcome.",
+      "We don't build AI platforms. We carefully evaluate the market, select the best technologies for each client's needs, and implement them within your existing environment.",
   },
   {
     title: "Measure everything that matters",
     description:
-      "Hours saved, costs reduced, revenue gained, satisfaction improved. If an automation can't be measured, it doesn't belong in our roadmap.",
+      "Hours saved, costs reduced, revenue gained, satisfaction improved. If an implementation can't be measured, it doesn't belong in our roadmap.",
   },
 ] as const;
 
@@ -65,13 +65,13 @@ export default function AboutPage() {
         <FadeIn className="relative mt-20 overflow-hidden rounded-3xl bg-[#081826] p-10 text-center sm:p-16">
           <div className="ambient-glow pointer-events-none absolute inset-0" />
           <h2 className="relative text-2xl font-bold tracking-[-0.02em] text-white sm:text-3xl">
-            AI that works for business — not the other way around.
+            Your implementation partner — not another software vendor.
           </h2>
           <p className="relative prose-narrow mx-auto mt-5 max-w-2xl text-white/50">
             Omnirexis was founded on a single conviction: growing businesses
-            deserve the same intelligent automation enterprises use — delivered
-            with clarity, speed, and an unwavering focus on what shows up on
-            your bottom line.
+            deserve expert help implementing AI — identifying the right
+            opportunities, selecting the right tools, integrating with existing
+            systems, and optimising for results that show up on your bottom line.
           </p>
           <div className="relative mt-8">
             <CtaButton />

@@ -8,9 +8,9 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { createMetadata, siteConfig, solutions } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "AI Automation Solutions",
+  title: "AI Implementation Services",
   description:
-    "AI chatbots, voice receptionists, workflow automation, lead qualification, customer support automation, internal AI assistants, sales automation and business process optimisation.",
+    "Omnirexis implements AI chatbots, voice receptionists, workflow automation, lead qualification, customer support automation, internal assistants, sales automation and business process optimisation — using the best-fit technologies for each client.",
   path: "/solutions",
 });
 
@@ -19,8 +19,8 @@ export default function SolutionsPage() {
     <>
       <PageHeader
         eyebrow="Solutions"
-        title="Automation engineered for commercial impact"
-        description="Eight integrated capabilities — each designed to save time, reduce costs, improve customer experience or accelerate revenue."
+        title="AI implementations with commercial impact built in"
+        description="Eight outcome-led capabilities — each implemented with the right technology to save time, reduce costs, improve customer experience or accelerate revenue."
       />
 
       <Section className="section-light" ariaLabelledby="capabilities-heading">
@@ -28,7 +28,7 @@ export default function SolutionsPage() {
           <SectionHeading
             id="capabilities-heading"
             eyebrow="Capabilities"
-            title="What we build"
+            title="What we deliver"
             description={siteConfig.positioning}
           />
         </FadeIn>

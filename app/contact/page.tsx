@@ -14,7 +14,7 @@ import { createMetadata, phoneTelHref, siteConfig } from "@/lib/site";
 export const metadata = createMetadata({
   title: "Book Your Free AI Strategy Call",
   description:
-    "Contact Omnirexis to book your free AI Strategy Call. Tell us about your business and discover how practical automation can save time, reduce costs and grow revenue.",
+    "Contact Omnirexis to book your free AI Strategy Call. Tell us about your business and discover how the right AI implementation can save time, reduce costs and grow revenue.",
   path: "/contact",
 });
 
@@ -44,8 +44,8 @@ export default function ContactPage() {
           </h1>
           <p className="prose-narrow mx-auto mt-5 text-base text-white/55 sm:text-lg">
             Share a little about your business and where time is being lost.
-            We&apos;ll come prepared with specific recommendations for your
-            discovery session.
+            We&apos;ll come prepared with specific implementation
+            recommendations for your discovery session.
           </p>
         </FadeIn>
 
