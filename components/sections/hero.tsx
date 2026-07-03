@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { HeroVideo } from "@/components/sections/hero-video";
 import { NeuralBackground } from "@/components/visuals/neural-background";
 import { CtaButton } from "@/components/shared/cta-button";
 import { Button } from "@/components/ui/button";
@@ -14,17 +14,10 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative min-h-[100svh] overflow-hidden bg-[#081826]"
     >
-      <Image
-        src="/images/hero-bg.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover object-[center_20%] opacity-50"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#081826] from-0% via-[#081826]/85 via-45% to-[#081826]/25 to-100%" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#081826] via-transparent to-[#081826]/60" />
-      <NeuralBackground />
+      <HeroVideo />
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <NeuralBackground />
+      </div>
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pt-28 pb-36 sm:px-8 lg:px-10">
         <motion.div
