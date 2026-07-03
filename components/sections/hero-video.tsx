@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const VIDEO_SRC = "/videos/hero.mp4";
+const VIDEO_SRC = "/videos/omnirexis-hero.mp4";
 const POSTER_SRC = "/images/hero-bg.jpg";
 
 function shouldDeferVideo() {
