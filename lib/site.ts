@@ -321,32 +321,29 @@ export const whyOmnirexis = [
   },
 ] as const;
 
-export const testimonials = [
+export const clientExpectationsIntro =
+  "Omnirexis helps businesses implement practical AI systems using the tools and platforms they already rely on. Instead of selling hype, we focus on measurable improvements: faster response times, less manual admin, better lead handling, stronger follow-up, and clearer workflows.";
+
+export const clientExpectations = [
   {
-    quote:
-      "Omnirexis implemented lead routing and follow-up automation using our existing CRM — no custom software, no platform migration. Response times improved dramatically and our sales team finally focuses on conversations that convert.",
-    author: "James Whitfield",
-    role: "Chief Executive",
-    company: "Northline Logistics",
-    result: "Faster lead response",
+    title: "Faster Lead Response",
+    description:
+      "AI-assisted workflows can help enquiries get routed, prioritised and followed up more quickly.",
   },
   {
-    quote:
-      "They selected the right support platforms and integrated them around how we already work. A large share of routine enquiries now resolve automatically — our team handles the cases that genuinely need them.",
-    author: "Priya Nair",
-    role: "Chief Operating Officer",
-    company: "Summit Health Group",
-    result: "Reduced ticket volume",
+    title: "Less Manual Admin",
+    description:
+      "We identify repetitive tasks and build automation around your existing systems where possible.",
   },
   {
-    quote:
-      "The CRM automation paid for itself quickly. Omnirexis thinks like operators, not software vendors — they implement what works and manage it properly.",
-    author: "Daniel Ortiz",
-    role: "Founder",
-    company: "Brightpath Retail",
-    result: "Rapid payback",
+    title: "Practical Implementation",
+    description:
+      "No unnecessary platform migration. No confusing jargon. Just useful AI systems designed around how the business already works.",
   },
 ] as const;
+
+export const clientExpectationsDisclaimer =
+  "Example outcomes are illustrative. Actual results depend on the business, systems, data quality and implementation scope.";
 
 export const faqs = [
   {

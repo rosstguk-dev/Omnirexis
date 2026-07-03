@@ -74,7 +74,7 @@ export default function ContactPage() {
                     <Input
                       id="company"
                       name="company"
-                      placeholder="Northline Logistics"
+                      placeholder="Your company name"
                       autoComplete="organization"
                       required
                       className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
