@@ -9,6 +9,8 @@ type ContactPayload = {
 };
 
 const LOG_PREFIX = "[contact]";
+const DEFAULT_WEBHOOK_URL =
+  "https://omnirexis.app.n8n.cloud/webhook/omnirexis-enquiry";
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
@@ -23,25 +25,16 @@ function webhookHost(webhookUrl: string) {
 }
 
 export async function POST(request: Request) {
-  const webhookUrl = process.env.N8N_CONTACT_WEBHOOK_URL?.trim();
+  const webhookUrl =
+    process.env.N8N_CONTACT_WEBHOOK_URL?.trim() || DEFAULT_WEBHOOK_URL;
+  const webhookSource = process.env.N8N_CONTACT_WEBHOOK_URL?.trim()
+    ? "N8N_CONTACT_WEBHOOK_URL"
+    : "default production webhook";
 
-  if (!webhookUrl) {
-    console.error(
-      `${LOG_PREFIX} N8N_CONTACT_WEBHOOK_URL is missing. ` +
-        "Set it in .env.local for local dev or in Vercel project environment variables for production, then redeploy.",
-    );
-    return NextResponse.json(
-      {
-        error: "Contact form is not configured",
-        detail: "N8N_CONTACT_WEBHOOK_URL environment variable is missing",
-      },
-      { status: 500 },
-    );
-  }
-
-  console.info(
-    `${LOG_PREFIX} Webhook env var present (host: ${webhookHost(webhookUrl)})`,
-  );
+  console.info(`${LOG_PREFIX} Using webhook (${webhookSource})`, {
+    host: webhookHost(webhookUrl),
+    url: webhookUrl,
+  });
 
   let body: Partial<ContactPayload>;
 
