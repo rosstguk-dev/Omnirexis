@@ -15,11 +15,11 @@ export function Hero() {
       className="relative min-h-[100svh] overflow-hidden bg-[#081826]"
     >
       <HeroVideo />
-      <div className="pointer-events-none absolute inset-0 opacity-40">
+      <div className="pointer-events-none absolute inset-0 z-[1] opacity-40">
         <NeuralBackground />
       </div>
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pt-28 pb-36 sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pt-28 pb-36 sm:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

@@ -59,7 +59,7 @@ export function HeroVideo() {
   }, [useVideo]);
 
   return (
-    <div className="absolute inset-0" aria-hidden="true">
+    <div className="absolute inset-0 z-0" aria-hidden="true">
       <Image
         src={POSTER_SRC}
         alt=""
@@ -79,6 +79,7 @@ export function HeroVideo() {
           playsInline
           preload="metadata"
           poster={POSTER_SRC}
+          disablePictureInPicture
         >
           <source src={VIDEO_SRC} type="video/mp4" />
         </video>
