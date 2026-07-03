@@ -48,7 +48,7 @@ export function organizationJsonLd() {
     name: siteConfig.legalName,
     alternateName: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}${siteConfig.logo}`,
+    logo: `${siteConfig.url}/favicon.svg`,
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.phoneInternational,

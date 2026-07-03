@@ -33,7 +33,7 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-10">
-        <Logo size="compact" priority />
+        <Logo variant="light" />
 
         <nav
           aria-label="Main navigation"

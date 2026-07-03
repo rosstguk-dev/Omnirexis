@@ -1,60 +1,49 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/site";
 
 type LogoProps = {
   className?: string;
-  size?: "compact" | "default" | "large";
-  priority?: boolean;
+  variant?: "light" | "dark";
+  showTagline?: boolean;
 };
-
-const logoAlt = "Omnirexis - Intelligence. Automated.";
-
-const sizeStyles = {
-  compact: {
-    clip: "h-9 w-[148px] overflow-hidden sm:w-[168px]",
-    image: "w-[148px] sm:w-[168px]",
-    sizes: "(max-width: 640px) 148px, 168px",
-  },
-  default: {
-    clip: "h-12 w-[180px] overflow-hidden sm:h-14 sm:w-[210px]",
-    image: "w-[180px] sm:w-[210px]",
-    sizes: "(max-width: 640px) 180px, 210px",
-  },
-  large: {
-    clip: "h-auto w-[200px] sm:w-[240px]",
-    image: "h-auto w-[200px] sm:w-[240px]",
-    sizes: "(max-width: 640px) 200px, 240px",
-  },
-} as const;
 
 export function Logo({
   className,
-  size = "default",
-  priority = false,
+  variant = "dark",
+  showTagline = false,
 }: LogoProps) {
-  const styles = sizeStyles[size];
-
   return (
     <Link
       href="/"
       className={cn(
-        "group inline-flex shrink-0 transition-opacity hover:opacity-90",
+        "group inline-flex items-center gap-3 transition-opacity hover:opacity-90",
         className,
       )}
-      aria-label={logoAlt}
     >
-      <span className={cn("relative block", styles.clip)}>
-        <Image
-          src="/images/omnirexis-logo.png"
-          alt={logoAlt}
-          width={1254}
-          height={1254}
-          priority={priority}
-          className={cn("h-auto max-w-none object-contain", styles.image)}
-          sizes={styles.sizes}
-        />
+      <span className="flex size-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#1E90FF] to-[#55D6FF] text-sm font-bold text-white shadow-sm shadow-[#1E90FF]/30 transition-transform group-hover:scale-105">
+        O
       </span>
+      <div className="flex flex-col">
+        <span
+          className={cn(
+            "text-lg font-bold tracking-tight",
+            variant === "light" ? "text-white" : "text-[#081826]",
+          )}
+        >
+          {siteConfig.name}
+        </span>
+        {showTagline && (
+          <span
+            className={cn(
+              "text-[10px] font-medium uppercase tracking-[0.2em]",
+              variant === "light" ? "text-white/50" : "text-muted-foreground",
+            )}
+          >
+            {siteConfig.tagline}
+          </span>
+        )}
+      </div>
     </Link>
   );
 }

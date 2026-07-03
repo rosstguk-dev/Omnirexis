@@ -40,7 +40,7 @@ export function MobileNav() {
       >
         <SheetHeader>
           <SheetTitle>
-            <Logo size="compact" />
+            <Logo variant="light" />
           </SheetTitle>
         </SheetHeader>
         <nav

@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SkipToContent } from "@/components/layout/skip-to-content";
 import { StickyCta } from "@/components/layout/sticky-cta";
-import { createMetadata, siteConfig } from "@/lib/site";
+import { createMetadata } from "@/lib/site";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -16,11 +16,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   ...createMetadata({}),
   icons: {
-    icon: [
-      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: siteConfig.logoIcon, sizes: "560x560", type: "image/png" },
-    ],
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 

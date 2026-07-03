@@ -35,8 +35,6 @@ export const siteConfig = {
   positioning:
     "We are not a software company. We select proven AI platforms, integrate them into your business, and deliver outcomes you can measure — time saved, costs reduced, revenue grown, and customer experience improved.",
   url: "https://omnirexis.com",
-  logo: "/images/omnirexis-logo.png",
-  logoIcon: "/images/omnirexis-icon.png",
   email: "hello@omnirexis.com",
   phone: "07566 729429",
   phoneInternational: "+44 7566 729429",
@@ -455,20 +453,13 @@ export function createMetadata({
       type: "website",
       url: canonical,
       locale: "en_US",
-      images: [
-        {
-          url: siteConfig.logo,
-          width: 1254,
-          height: 1254,
-          alt: `${siteConfig.name} — ${siteConfig.tagline}`,
-        },
-      ],
+      images: [{ url: "/images/hero-bg.jpg", width: 1200, height: 630, alt: siteConfig.name }],
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description: pageDescription,
-      images: [siteConfig.logo],
+      images: ["/images/hero-bg.jpg"],
     },
     robots: { index: true, follow: true },
   };
