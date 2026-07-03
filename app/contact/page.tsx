@@ -4,10 +4,7 @@ import { LinkedInIcon } from "@/components/icons/linkedin";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaButton } from "@/components/shared/cta-button";
 import { GlassCard } from "@/components/visuals/glass-card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/contact/contact-form";
 import { BusinessHours } from "@/components/shared/business-hours";
 import { createMetadata, phoneTelHref, siteConfig } from "@/lib/site";
 
@@ -52,94 +49,7 @@ export default function ContactPage() {
         <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-5 lg:gap-10">
           <FadeIn className="lg:col-span-3">
             <GlassCard variant="dark" hover={false} className="p-8 sm:p-10">
-              <form className="space-y-5" action="#" method="post">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm text-white/70">
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="Alexandra Chen"
-                      autoComplete="name"
-                      required
-                      className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="company" className="text-sm text-white/70">
-                      Company
-                    </Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      placeholder="Your company name"
-                      autoComplete="organization"
-                      required
-                      className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-                    />
-                  </div>
-                </div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm text-white/70">
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="alexandra@northline.com"
-                      autoComplete="email"
-                      required
-                      className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm text-white/70">
-                      Phone
-                    </Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="07566 729429"
-                      autoComplete="tel"
-                      className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm text-white/70">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us which repetitive processes are costing your team the most time — lead follow-up, customer support, internal admin, or something else."
-                    rows={5}
-                    required
-                    className="rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="h-12 w-full rounded-xl bg-[#1E90FF] text-sm font-semibold text-white hover:bg-[#1878D8] sm:w-auto"
-                >
-                  {siteConfig.ctaLabel}
-                </Button>
-                <p className="text-xs leading-relaxed text-white/30">
-                  By submitting this form, you agree to be contacted regarding
-                  your enquiry. We never share your information with third
-                  parties. Read our{" "}
-                  <a href="/privacy" className="text-[#55D6FF]/80 underline-offset-2 hover:underline">
-                    Privacy Policy
-                  </a>
-                  .
-                </p>
-              </form>
+              <ContactForm />
             </GlassCard>
           </FadeIn>
 
