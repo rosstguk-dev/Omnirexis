@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  isValidOptionalWebsiteUrl,
+  normalizeWebsiteUrl,
+} from "@/lib/contact-validation";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -17,19 +21,29 @@ const errorMessage =
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [websiteError, setWebsiteError] = useState<string | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("submitting");
+    setWebsiteError(null);
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const websiteRaw = String(formData.get("website") ?? "");
+
+    if (!isValidOptionalWebsiteUrl(websiteRaw)) {
+      setWebsiteError("Please enter a valid website URL.");
+      return;
+    }
+
+    setStatus("submitting");
 
     const payload = {
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       company: String(formData.get("company") ?? ""),
+      website: normalizeWebsiteUrl(websiteRaw),
       message: String(formData.get("message") ?? ""),
     };
 
@@ -87,19 +101,43 @@ export function ContactForm() {
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="company" className="text-sm text-white/70">
-            Company
-          </Label>
-          <Input
-            id="company"
-            name="company"
-            placeholder="Your company name"
-            autoComplete="organization"
-            required
-            disabled={status === "submitting"}
-            className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-          />
+        <div className="space-y-5">
+          <div className="space-y-2">
+            <Label htmlFor="company" className="text-sm text-white/70">
+              Company
+            </Label>
+            <Input
+              id="company"
+              name="company"
+              placeholder="Your company name"
+              autoComplete="organization"
+              required
+              disabled={status === "submitting"}
+              className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="website" className="text-sm text-white/70">
+              Business Website
+            </Label>
+            <Input
+              id="website"
+              name="website"
+              type="url"
+              inputMode="url"
+              placeholder="https://yourcompany.co.uk"
+              autoComplete="url"
+              disabled={status === "submitting"}
+              aria-invalid={websiteError ? true : undefined}
+              aria-describedby={websiteError ? "website-error" : undefined}
+              className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
+            />
+            {websiteError && (
+              <p id="website-error" className="text-xs text-red-300">
+                {websiteError}
+              </p>
+            )}
+          </div>
         </div>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">

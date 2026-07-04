@@ -1,3 +1,7 @@
+import {
+  isValidOptionalWebsiteUrl,
+  normalizeWebsiteUrl,
+} from "@/lib/contact-validation";
 import { NextResponse } from "next/server";
 
 type ContactPayload = {
@@ -5,6 +9,7 @@ type ContactPayload = {
   email: string;
   phone: string;
   company: string;
+  website: string;
   message: string;
 };
 
@@ -45,11 +50,24 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
+  const websiteRaw = typeof body.website === "string" ? body.website : "";
+
+  if (!isValidOptionalWebsiteUrl(websiteRaw)) {
+    console.error(`${LOG_PREFIX} Validation failed — invalid website URL`, {
+      website: websiteRaw,
+    });
+    return NextResponse.json(
+      { error: "Invalid website URL" },
+      { status: 400 },
+    );
+  }
+
   const payload: ContactPayload = {
     name: body.name?.trim() ?? "",
     email: body.email?.trim() ?? "",
     phone: body.phone?.trim() ?? "",
     company: body.company?.trim() ?? "",
+    website: normalizeWebsiteUrl(websiteRaw),
     message: body.message?.trim() ?? "",
   };
 
@@ -58,6 +76,7 @@ export async function POST(request: Request) {
     email: Boolean(payload.email),
     phone: Boolean(payload.phone),
     company: Boolean(payload.company),
+    website: Boolean(payload.website),
     message: Boolean(payload.message),
   });
 
