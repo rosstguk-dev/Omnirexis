@@ -21,6 +21,7 @@ const errorMessage =
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [website, setWebsite] = useState("");
   const [websiteError, setWebsiteError] = useState<string | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -29,9 +30,8 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const websiteRaw = String(formData.get("website") ?? "");
 
-    if (!isValidOptionalWebsiteUrl(websiteRaw)) {
+    if (!isValidOptionalWebsiteUrl(website)) {
       setWebsiteError("Please enter a valid website URL.");
       return;
     }
@@ -43,7 +43,7 @@ export function ContactForm() {
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       company: String(formData.get("company") ?? ""),
-      website: normalizeWebsiteUrl(websiteRaw),
+      website: normalizeWebsiteUrl(website),
       message: String(formData.get("message") ?? ""),
     };
 
@@ -60,6 +60,7 @@ export function ContactForm() {
       }
 
       form.reset();
+      setWebsite("");
       setStatus("success");
     } catch {
       setStatus("error");
@@ -125,6 +126,8 @@ export function ContactForm() {
               name="website"
               type="url"
               inputMode="url"
+              value={website}
+              onChange={(event) => setWebsite(event.target.value)}
               placeholder="https://yourcompany.co.uk"
               autoComplete="url"
               disabled={status === "submitting"}
