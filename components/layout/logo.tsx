@@ -10,9 +10,9 @@ type LogoProps = {
 };
 
 const logoClassNames = {
-  header: "h-10 w-auto max-h-12 object-contain",
-  footer: "h-auto w-[200px] object-contain sm:w-[240px]",
-  icon: "h-9 w-auto object-contain",
+  header: "h-12 w-auto object-contain bg-transparent md:h-14",
+  footer: "h-auto w-[200px] object-contain bg-transparent sm:w-[240px]",
+  icon: "h-11 w-auto object-contain bg-transparent",
 } as const;
 
 export function Logo({ className, variant = "header" }: LogoProps) {
@@ -30,7 +30,12 @@ export function Logo({ className, variant = "header" }: LogoProps) {
 
   if (variant === "icon") {
     return (
-      <span className={cn("inline-flex shrink-0 items-center", className)}>
+      <span
+        className={cn(
+          "inline-flex shrink-0 items-center overflow-visible bg-transparent",
+          className,
+        )}
+      >
         {image}
       </span>
     );
@@ -40,7 +45,7 @@ export function Logo({ className, variant = "header" }: LogoProps) {
     <Link
       href="/"
       className={cn(
-        "inline-flex shrink-0 items-center transition-opacity hover:opacity-90",
+        "inline-flex shrink-0 items-center overflow-visible bg-transparent transition-opacity hover:opacity-90",
         className,
       )}
       aria-label={LOGO_ALT}
