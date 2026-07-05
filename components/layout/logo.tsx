@@ -21,8 +21,8 @@ export function Logo({ className, variant = "header" }: LogoProps) {
     <img
       src={LOGO_SRC}
       alt={LOGO_ALT}
-      width={1254}
-      height={1254}
+      width={1083}
+      height={721}
       decoding="async"
       className={cn("block max-w-none", logoClassNames[variant])}
     />
