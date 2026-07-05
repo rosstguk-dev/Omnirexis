@@ -1,57 +1,34 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+const LOGO_SRC = "/images/omnirexis-logo.svg";
+const LOGO_ALT = "Omnirexis - Intelligence. Automated.";
 
 type LogoProps = {
   className?: string;
   variant?: "header" | "footer" | "icon";
-  priority?: boolean;
 };
 
-const logoVariants = {
-  header: {
-    src: "/images/omnirexis-logo-header.svg",
-    alt: "Omnirexis",
-    width: 1254,
-    height: 800,
-    imageClassName: "h-[38px] w-auto max-h-[48px] sm:h-[40px] lg:h-[44px]",
-  },
-  footer: {
-    src: "/images/omnirexis-logo.svg",
-    alt: "Omnirexis - Intelligence. Automated.",
-    width: 1254,
-    height: 1254,
-    imageClassName: "h-auto w-[200px] sm:w-[240px]",
-  },
-  icon: {
-    src: "/images/omnirexis-icon.svg",
-    alt: "Omnirexis",
-    width: 660,
-    height: 660,
-    imageClassName: "h-9 w-9",
-  },
+const logoClassNames = {
+  header: "h-10 w-auto max-h-12 object-contain",
+  footer: "h-auto w-[200px] object-contain sm:w-[240px]",
+  icon: "h-9 w-auto object-contain",
 } as const;
 
-export function Logo({
-  className,
-  variant = "header",
-  priority = false,
-}: LogoProps) {
-  const config = logoVariants[variant];
-  const isLinked = variant !== "icon";
-
+export function Logo({ className, variant = "header" }: LogoProps) {
   const image = (
-    <Image
-      src={config.src}
-      alt={config.alt}
-      width={config.width}
-      height={config.height}
-      priority={priority}
-      className={cn("max-w-none object-contain", config.imageClassName)}
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={LOGO_SRC}
+      alt={LOGO_ALT}
+      width={1254}
+      height={1254}
+      decoding="async"
+      className={cn("block max-w-none", logoClassNames[variant])}
     />
   );
 
-  if (!isLinked) {
+  if (variant === "icon") {
     return (
       <span className={cn("inline-flex shrink-0 items-center", className)}>
         {image}
@@ -63,10 +40,10 @@ export function Logo({
     <Link
       href="/"
       className={cn(
-        "group inline-flex shrink-0 items-center transition-opacity hover:opacity-90",
+        "inline-flex shrink-0 items-center transition-opacity hover:opacity-90",
         className,
       )}
-      aria-label={config.alt}
+      aria-label={LOGO_ALT}
     >
       {image}
     </Link>
