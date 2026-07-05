@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
@@ -31,8 +30,10 @@ export function CtaButton({
     <Button
       nativeButton={false}
       render={
-        <Link
+        <a
           href={siteConfig.ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2.5"
         >
           {showIcon && <Calendar className="size-4" aria-hidden="true" />}
@@ -43,7 +44,7 @@ export function CtaButton({
               aria-hidden="true"
             />
           )}
-        </Link>
+        </a>
       }
       variant={variant === "primary" ? "default" : variant}
       size={size}

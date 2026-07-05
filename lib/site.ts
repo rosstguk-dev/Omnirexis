@@ -41,7 +41,8 @@ export const siteConfig = {
   linkedin: "https://linkedin.com/company/omnirexis",
   address: "100 Innovation Drive, Suite 400, San Francisco, CA 94105",
   ctaLabel: "Book Your Free AI Strategy Call",
-  ctaHref: "/contact",
+  ctaHref:
+    "https://meetings-eu1.hubspot.com/ross-gallagher/free-ai-strategy-call",
   ctaMicrocopy: "30-minute call · Senior strategist · No obligation",
   keywords: [
     "AI implementation consultancy",
