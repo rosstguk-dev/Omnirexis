@@ -5,10 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  isValidOptionalWebsiteUrl,
-  normalizeWebsiteUrl,
-} from "@/lib/contact-validation";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -21,20 +17,12 @@ const errorMessage =
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
-  const [website, setWebsite] = useState("");
-  const [websiteError, setWebsiteError] = useState<string | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setWebsiteError(null);
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-
-    if (!isValidOptionalWebsiteUrl(website)) {
-      setWebsiteError("Please enter a valid website URL.");
-      return;
-    }
 
     setStatus("submitting");
 
@@ -43,7 +31,7 @@ export function ContactForm() {
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       company: String(formData.get("company") ?? ""),
-      website: normalizeWebsiteUrl(website),
+      website: "",
       message: String(formData.get("message") ?? ""),
     };
 
@@ -60,7 +48,6 @@ export function ContactForm() {
       }
 
       form.reset();
-      setWebsite("");
       setStatus("success");
     } catch {
       setStatus("error");
@@ -90,7 +77,7 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name" className="text-sm text-white/70">
-            Name
+            Full Name
           </Label>
           <Input
             id="name"
@@ -102,51 +89,25 @@ export function ContactForm() {
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
           />
         </div>
-        <div className="space-y-5">
-          <div className="space-y-2">
-            <Label htmlFor="company" className="text-sm text-white/70">
-              Company
-            </Label>
-            <Input
-              id="company"
-              name="company"
-              placeholder="Your company name"
-              autoComplete="organization"
-              required
-              disabled={status === "submitting"}
-              className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="website" className="text-sm text-white/70">
-              Business Website
-            </Label>
-            <Input
-              id="website"
-              name="website"
-              type="url"
-              inputMode="url"
-              value={website}
-              onChange={(event) => setWebsite(event.target.value)}
-              placeholder="https://yourcompany.co.uk"
-              autoComplete="url"
-              disabled={status === "submitting"}
-              aria-invalid={websiteError ? true : undefined}
-              aria-describedby={websiteError ? "website-error" : undefined}
-              className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-            />
-            {websiteError && (
-              <p id="website-error" className="text-xs text-red-300">
-                {websiteError}
-              </p>
-            )}
-          </div>
+        <div className="space-y-2">
+          <Label htmlFor="company" className="text-sm text-white/70">
+            Company Name
+          </Label>
+          <Input
+            id="company"
+            name="company"
+            placeholder="Your company name"
+            autoComplete="organization"
+            required
+            disabled={status === "submitting"}
+            className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
+          />
         </div>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="email" className="text-sm text-white/70">
-            Email
+            Email Address
           </Label>
           <Input
             id="email"
@@ -161,7 +122,7 @@ export function ContactForm() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="phone" className="text-sm text-white/70">
-            Phone
+            Phone Number
           </Label>
           <Input
             id="phone"
@@ -176,7 +137,7 @@ export function ContactForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="message" className="text-sm text-white/70">
-          Message
+          Message / What would you like help with?
         </Label>
         <Textarea
           id="message"
@@ -197,7 +158,9 @@ export function ContactForm() {
           status === "submitting" && "opacity-70",
         )}
       >
-        {status === "submitting" ? "Sending…" : siteConfig.ctaLabel}
+        {status === "submitting"
+          ? "Sending…"
+          : siteConfig.enquirySubmitLabel}
       </Button>
       <p className="text-xs leading-relaxed text-white/30">
         By submitting this form, you agree to be contacted regarding your

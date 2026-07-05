@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/sections/page-header";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { EnquirySection } from "@/components/sections/enquiry-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqJsonLd } from "@/lib/seo";
 import { createMetadata } from "@/lib/site";
@@ -22,6 +23,7 @@ export default function FaqPage() {
         description="Honest, direct answers — so you can decide whether a strategy call is the right next step."
       />
       <FaqSection />
+      <EnquirySection />
       <CtaBanner />
     </>
   );

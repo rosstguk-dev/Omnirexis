@@ -1,6 +1,5 @@
 import { FadeIn } from "@/components/motion/fade-in";
-import { CtaButton } from "@/components/shared/cta-button";
-import { siteConfig } from "@/lib/site";
+import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
 
 export function CtaBanner() {
   return (
@@ -23,10 +22,7 @@ export function CtaBanner() {
                 strategist. Understand what the right implementation is worth to
                 your business — before you spend a dollar.
               </p>
-              <div className="mt-9 flex flex-col items-center gap-3">
-                <CtaButton />
-                <p className="text-xs text-white/30">{siteConfig.ctaMicrocopy}</p>
-              </div>
+              <BookingCtaGroup className="mt-9" />
             </div>
           </div>
         </FadeIn>

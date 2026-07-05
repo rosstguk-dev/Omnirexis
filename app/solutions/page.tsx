@@ -1,6 +1,7 @@
 import { SolutionCard } from "@/components/sections/solution-card";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { EnquirySection } from "@/components/sections/enquiry-section";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
@@ -46,6 +47,7 @@ export default function SolutionsPage() {
 
       <TechnologyPartners className="border-t border-[#081826]/[0.06] bg-[#f6f8fb]/50" />
 
+      <EnquirySection />
       <CtaBanner />
     </>
   );

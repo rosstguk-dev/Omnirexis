@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { HeroVideo } from "@/components/sections/hero-video";
 import { NeuralBackground } from "@/components/visuals/neural-background";
 import { CtaButton } from "@/components/shared/cta-button";
+import { EnquiryCtaLink } from "@/components/shared/enquiry-cta-link";
 import { Button } from "@/components/ui/button";
 import { siteConfig, trustBadges } from "@/lib/site";
 
@@ -59,6 +60,7 @@ export function Hero() {
             />
           </div>
           <p className="mt-4 text-xs text-white/35">{siteConfig.ctaMicrocopy}</p>
+          <EnquiryCtaLink className="mt-2" theme="dark" />
         </motion.div>
 
         <motion.div

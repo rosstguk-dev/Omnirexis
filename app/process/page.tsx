@@ -1,10 +1,10 @@
 import { PageHeader } from "@/components/sections/page-header";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { FadeIn } from "@/components/motion/fade-in";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
+import { EnquirySection } from "@/components/sections/enquiry-section";
 import { Section } from "@/components/shared/section";
-import { createMetadata, siteConfig } from "@/lib/site";
+import { createMetadata } from "@/lib/site";
 
 export const metadata = createMetadata({
   title: "Our Process",
@@ -26,14 +26,10 @@ export default function ProcessPage() {
         <div className="mx-auto max-w-3xl">
           <ProcessTimeline />
         </div>
-        <FadeIn className="mt-16 text-center">
-          <CtaButton />
-          <p className="mt-4 text-sm text-muted-foreground">
-            {siteConfig.ctaMicrocopy}
-          </p>
-        </FadeIn>
+        <BookingCtaGroup theme="light" className="mt-16" />
       </Section>
 
+      <EnquirySection />
       <CtaBanner />
     </>
   );

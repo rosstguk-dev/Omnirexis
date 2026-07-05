@@ -2,10 +2,10 @@ import Image from "next/image";
 import { Clock, Mail, Phone } from "lucide-react";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { FadeIn } from "@/components/motion/fade-in";
-import { CtaButton } from "@/components/shared/cta-button";
-import { GlassCard } from "@/components/visuals/glass-card";
 import { ContactForm } from "@/components/contact/contact-form";
+import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
 import { BusinessHours } from "@/components/shared/business-hours";
+import { GlassCard } from "@/components/visuals/glass-card";
 import { createMetadata, phoneTelHref, siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
@@ -40,13 +40,17 @@ export default function ContactPage() {
             Book Your Free AI Strategy Call
           </h1>
           <p className="prose-narrow mx-auto mt-5 text-base text-white/55 sm:text-lg">
-            Share a little about your business and where time is being lost.
-            We&apos;ll come prepared with specific implementation
-            recommendations for your discovery session.
+            Book a free strategy call with a senior Omnirexis strategist, or
+            send an enquiry if you&apos;re not ready to schedule yet. Either
+            way, we&apos;ll help you understand where AI implementation can
+            create measurable value.
           </p>
         </FadeIn>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-5 lg:gap-10">
+        <div
+          id={siteConfig.enquirySectionId}
+          className="mx-auto mt-16 grid max-w-5xl scroll-mt-28 gap-8 lg:grid-cols-5 lg:gap-10"
+        >
           <FadeIn className="lg:col-span-3">
             <GlassCard variant="dark" hover={false} className="p-8 sm:p-10">
               <ContactForm />
@@ -123,10 +127,10 @@ export default function ContactPage() {
                 </div>
               </GlassCard>
 
-              <CtaButton className="w-full" />
-              <p className="text-center text-xs text-white/30">
-                {siteConfig.ctaMicrocopy}
-              </p>
+              <BookingCtaGroup
+                buttonClassName="w-full"
+                buttonSize="default"
+              />
             </div>
           </FadeIn>
         </div>

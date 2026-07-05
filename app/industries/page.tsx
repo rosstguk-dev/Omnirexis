@@ -1,6 +1,7 @@
 import { IndustryCard } from "@/components/sections/industry-card";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { EnquirySection } from "@/components/sections/enquiry-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
 import { Section } from "@/components/shared/section";
@@ -43,6 +44,7 @@ export default function IndustriesPage() {
         />
       </Section>
 
+      <EnquirySection />
       <CtaBanner />
     </>
   );
