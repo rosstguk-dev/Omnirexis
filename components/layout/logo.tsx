@@ -3,16 +3,17 @@ import { cn } from "@/lib/utils";
 
 const LOGO_SRC = "/images/omnirexis-logo.svg";
 const LOGO_ALT = "Omnirexis - Intelligence. Automated.";
+const LOGO_WIDTH = 3175;
+const LOGO_HEIGHT = 653;
 
 type LogoProps = {
   className?: string;
-  variant?: "header" | "footer" | "icon";
+  variant?: "header" | "footer";
 };
 
 const logoClassNames = {
-  header: "h-12 w-auto object-contain bg-transparent md:h-14",
-  footer: "h-auto w-[200px] object-contain bg-transparent sm:w-[240px]",
-  icon: "h-11 w-auto object-contain bg-transparent",
+  header: "h-9 w-auto object-contain bg-transparent md:h-11",
+  footer: "h-12 w-auto object-contain bg-transparent md:h-16",
 } as const;
 
 export function Logo({ className, variant = "header" }: LogoProps) {
@@ -21,25 +22,12 @@ export function Logo({ className, variant = "header" }: LogoProps) {
     <img
       src={LOGO_SRC}
       alt={LOGO_ALT}
-      width={1083}
-      height={721}
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
       decoding="async"
       className={cn("block max-w-none", logoClassNames[variant])}
     />
   );
-
-  if (variant === "icon") {
-    return (
-      <span
-        className={cn(
-          "inline-flex shrink-0 items-center overflow-visible bg-transparent",
-          className,
-        )}
-      >
-        {image}
-      </span>
-    );
-  }
 
   return (
     <Link
