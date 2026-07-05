@@ -16,8 +16,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   ...createMetadata({}),
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/images/omnirexis-icon.svg",
+    apple: "/images/omnirexis-icon.svg",
   },
 };
 

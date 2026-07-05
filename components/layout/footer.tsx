@@ -24,7 +24,7 @@ export function Footer() {
 
         <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Logo variant="light" showTagline />
+            <Logo variant="footer" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
               {siteConfig.mission}
             </p>

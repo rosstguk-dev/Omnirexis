@@ -35,6 +35,8 @@ export const siteConfig = {
   positioning:
     "We are not a software company. We select proven AI platforms, integrate them into your business, and deliver outcomes you can measure — time saved, costs reduced, revenue grown, and customer experience improved.",
   url: "https://omnirexis.com",
+  logo: "/images/omnirexis-logo.svg",
+  logoIcon: "/images/omnirexis-icon.svg",
   email: "hello@omnirexis.com",
   phone: "07566 729429",
   phoneInternational: "+44 7566 729429",
