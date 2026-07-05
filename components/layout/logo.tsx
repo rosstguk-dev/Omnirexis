@@ -12,8 +12,8 @@ type LogoProps = {
 };
 
 const logoClassNames = {
-  header: "h-9 w-auto object-contain bg-transparent md:h-11",
-  footer: "h-12 w-auto object-contain bg-transparent md:h-16",
+  header: "h-[44px] w-auto object-contain",
+  footer: "h-[80px] w-auto object-contain",
 } as const;
 
 export function Logo({ className, variant = "header" }: LogoProps) {
