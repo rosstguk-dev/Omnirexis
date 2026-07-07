@@ -2,7 +2,7 @@ import { PageHeader } from "@/components/sections/page-header";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { FadeIn } from "@/components/motion/fade-in";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { Section } from "@/components/shared/section";
 import { createMetadata, siteConfig } from "@/lib/site";
 
@@ -27,7 +27,11 @@ export default function ProcessPage() {
           <ProcessTimeline />
         </div>
         <FadeIn className="mt-16 text-center">
-          <CtaButton />
+          <BookingCtaStack
+            theme="light"
+            className="mx-auto max-w-sm"
+            buttonClassName="sm:w-full"
+          />
           <p className="mt-4 text-sm text-muted-foreground">
             {siteConfig.ctaMicrocopy}
           </p>

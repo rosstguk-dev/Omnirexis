@@ -1,4 +1,4 @@
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { FadeIn } from "@/components/motion/fade-in";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -56,7 +56,12 @@ export function CtaStrip({
             {siteConfig.ctaMicrocopy}
           </p>
         </div>
-        <CtaButton className="shrink-0" />
+        <BookingCtaStack
+          theme={isDark ? "dark" : "light"}
+          align="left"
+          className="w-full shrink-0 sm:w-auto"
+          buttonClassName="sm:min-w-[17.5rem]"
+        />
       </div>
     </FadeIn>
   );

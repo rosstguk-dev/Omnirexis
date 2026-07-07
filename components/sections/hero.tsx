@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { HeroVideo } from "@/components/sections/hero-video";
 import { NeuralBackground } from "@/components/visuals/neural-background";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { Button } from "@/components/ui/button";
 import { siteConfig, trustBadges } from "@/lib/site";
 
@@ -47,7 +47,11 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <CtaButton />
+            <BookingCtaStack
+              align="left"
+              className="w-full sm:w-auto"
+              buttonClassName="sm:min-w-[17.5rem]"
+            />
             <Button
               nativeButton={false}
               render={

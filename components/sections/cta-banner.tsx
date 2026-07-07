@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/motion/fade-in";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { siteConfig } from "@/lib/site";
 
 export function CtaBanner() {
@@ -24,7 +24,10 @@ export function CtaBanner() {
                 your business — before you spend a dollar.
               </p>
               <div className="mt-9 flex flex-col items-center gap-3">
-                <CtaButton />
+                <BookingCtaStack
+                  className="w-full max-w-sm sm:w-auto"
+                  buttonClassName="sm:w-full"
+                />
                 <p className="text-xs text-white/30">{siteConfig.ctaMicrocopy}</p>
               </div>
             </div>

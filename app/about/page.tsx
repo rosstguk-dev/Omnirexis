@@ -1,7 +1,7 @@
 import { FadeIn } from "@/components/motion/fade-in";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { Section } from "@/components/shared/section";
 import { GlassCard } from "@/components/visuals/glass-card";
 import { createMetadata } from "@/lib/site";
@@ -76,9 +76,10 @@ export default function AboutPage() {
             costs reduced, revenue grown, or customer experience improved. If it
             can&apos;t be measured, it doesn&apos;t make the cut.
           </p>
-          <div className="relative mt-8">
-            <CtaButton />
-          </div>
+          <BookingCtaStack
+            className="relative mx-auto mt-8 max-w-sm"
+            buttonClassName="sm:w-full"
+          />
         </FadeIn>
       </Section>
 

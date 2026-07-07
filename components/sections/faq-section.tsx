@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { SectionHeading } from "@/components/shared/section-heading";
 import {
   Accordion,
@@ -41,7 +41,11 @@ export function FaqSection({
             />
             {showCta && (
               <div className="mt-8 hidden lg:block">
-                <CtaButton />
+                <BookingCtaStack
+                  theme="light"
+                  align="left"
+                  className="max-w-sm"
+                />
                 <p className="mt-3 text-xs text-muted-foreground">
                   Prefer a conversation? We&apos;re happy to walk through any of
                   this on a call.
@@ -77,9 +81,11 @@ export function FaqSection({
             )}
 
             {showCta && (
-              <div className="mt-8 lg:hidden">
-                <CtaButton className="w-full" />
-              </div>
+              <BookingCtaStack
+                theme="light"
+                align="left"
+                className="mt-8 lg:hidden"
+              />
             )}
           </FadeIn>
         </div>
