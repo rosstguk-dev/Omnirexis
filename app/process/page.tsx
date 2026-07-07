@@ -2,7 +2,7 @@ import { PageHeader } from "@/components/sections/page-header";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
-import { EnquirySection } from "@/components/sections/enquiry-section";
+
 import { Section } from "@/components/shared/section";
 import { createMetadata } from "@/lib/site";
 
@@ -29,7 +29,6 @@ export default function ProcessPage() {
         <BookingCtaGroup theme="light" className="mt-16" />
       </Section>
 
-      <EnquirySection />
       <CtaBanner />
     </>
   );

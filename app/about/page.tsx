@@ -2,7 +2,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
-import { EnquirySection } from "@/components/sections/enquiry-section";
+
 import { Section } from "@/components/shared/section";
 import { GlassCard } from "@/components/visuals/glass-card";
 import { createMetadata } from "@/lib/site";
@@ -81,7 +81,6 @@ export default function AboutPage() {
         </FadeIn>
       </Section>
 
-      <EnquirySection />
       <CtaBanner />
     </>
   );

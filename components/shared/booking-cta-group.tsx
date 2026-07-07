@@ -1,5 +1,5 @@
 import { CtaButton } from "@/components/shared/cta-button";
-import { EnquiryCtaButton } from "@/components/shared/enquiry-cta-button";
+import { ContactCtaButton } from "@/components/shared/contact-cta-button";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -7,10 +7,10 @@ type BookingCtaGroupProps = {
   align?: "left" | "center";
   theme?: "light" | "dark";
   showMicrocopy?: boolean;
-  showEnquiryButton?: boolean;
+  showContactButton?: boolean;
   className?: string;
   buttonClassName?: string;
-  enquiryButtonClassName?: string;
+  contactButtonClassName?: string;
   buttonSize?: "default" | "lg";
 };
 
@@ -18,10 +18,10 @@ export function BookingCtaGroup({
   align = "center",
   theme = "dark",
   showMicrocopy = true,
-  showEnquiryButton = true,
+  showContactButton = true,
   className,
   buttonClassName,
-  enquiryButtonClassName,
+  contactButtonClassName,
   buttonSize = "lg",
 }: BookingCtaGroupProps) {
   return (
@@ -42,9 +42,9 @@ export function BookingCtaGroup({
           className={cn("w-full sm:w-auto", buttonClassName)}
           size={buttonSize}
         />
-        {showEnquiryButton && (
-          <EnquiryCtaButton
-            className={cn("w-full sm:w-auto", enquiryButtonClassName)}
+        {showContactButton && (
+          <ContactCtaButton
+            className={cn("w-full sm:w-auto", contactButtonClassName)}
             size={buttonSize}
           />
         )}

@@ -2,24 +2,24 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-type EnquiryCtaButtonProps = {
+type ContactCtaButtonProps = {
   size?: "default" | "lg";
   className?: string;
 };
 
-export function EnquiryCtaButton({
+export function ContactCtaButton({
   size = "lg",
   className,
-}: EnquiryCtaButtonProps) {
+}: ContactCtaButtonProps) {
   return (
     <Button
       nativeButton={false}
       render={
         <a
-          href={siteConfig.enquiryCtaHref}
+          href={siteConfig.contactCtaHref}
           className="inline-flex items-center justify-center"
         >
-          {siteConfig.enquiryCtaLabel}
+          {siteConfig.contactCtaLabel}
         </a>
       }
       variant="outline"
