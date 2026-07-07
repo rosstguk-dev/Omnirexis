@@ -1,3 +1,4 @@
+import type { InsightArticle } from "@/lib/insights";
 import { businessHoursSchedule, faqs, siteConfig, solutions } from "@/lib/site";
 
 const weekdayNames = [
@@ -119,10 +120,12 @@ export function localBusinessJsonLd() {
     },
     knowsAbout: [
       "AI Automation UK",
-      "Business AI Consultant UK",
+      "AI Consultant UK",
+      "Business AI Solutions",
       "Workflow Automation",
-      "AI Consultancy",
-      "Artificial Intelligence for Business",
+      "AI Receptionist",
+      "AI Consultancy Manchester",
+      "AI Solutions for Small Businesses",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -209,6 +212,59 @@ export function faqJsonLd() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function articleJsonLd(article: InsightArticle) {
+  const url = absoluteUrl(`/insights/${article.slug}`);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: article.title,
+    description: article.metaDescription,
+    url,
+    datePublished: article.publishedDate,
+    dateModified: article.publishedDate,
+    author: {
+      "@type": "Organization",
+      name: article.author,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl(siteConfig.logo),
+      },
+    },
+    image: absoluteUrl(siteConfig.ogImage),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+    },
+    inLanguage: "en-GB",
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+  };
+}
+
+export function articleFaqJsonLd(article: InsightArticle) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: article.faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {

@@ -53,6 +53,12 @@ export const pageSeo = {
       "Book a free AI strategy call or send an enquiry. Speak with Omnirexis about AI automation, workflow optimisation and intelligent business solutions for your UK organisation.",
     path: "/contact",
   },
+  insights: {
+    title: "AI Automation Insights for UK Businesses",
+    description:
+      "Practical articles on AI automation UK, workflow automation, AI receptionists, and business AI solutions — written for UK business owners by Omnirexis.",
+    path: "/insights",
+  },
   privacy: {
     title: "Privacy Policy",
     description:

@@ -2,7 +2,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const LOGO_SRC = "/images/omnirexis-logo.svg";
-const LOGO_ALT = "Omnirexis - Intelligence. Automated.";
+const LOGO_ALT =
+  "Omnirexis logo — AI automation and business AI solutions UK";
 const LOGO_WIDTH = 3175;
 const LOGO_HEIGHT = 653;
 

@@ -43,6 +43,13 @@ export function Footer() {
                 className="text-[#55D6FF]/80 transition-colors hover:text-[#55D6FF]"
               >
                 learn about Omnirexis
+              </Link>{" "}
+              or read our{" "}
+              <Link
+                href="/insights"
+                className="text-[#55D6FF]/80 transition-colors hover:text-[#55D6FF]"
+              >
+                AI insights
               </Link>
               .
             </p>
