@@ -1,12 +1,10 @@
 import { PageHeader } from "@/components/sections/page-header";
 import { Section } from "@/components/shared/section";
-import { createMetadata, siteConfig } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
+import { siteConfig } from "@/lib/site";
 
-export const metadata = createMetadata({
-  title: "Privacy Policy",
-  description: `How ${siteConfig.name} collects, uses, stores and protects your personal information.`,
-  path: "/privacy",
-});
+export const metadata = metadataFor("privacy");
 
 const sections = [
   {
@@ -38,6 +36,15 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
+      <PageStructuredData
+        path={pageSeo.privacy.path}
+        title={pageSeo.privacy.title}
+        description={pageSeo.privacy.description}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
+        ]}
+      />
       <PageHeader
         eyebrow="Legal"
         title="Privacy Policy"

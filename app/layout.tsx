@@ -4,17 +4,20 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SkipToContent } from "@/components/layout/skip-to-content";
 import { StickyCta } from "@/components/layout/sticky-cta";
-import { createMetadata } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
-  ...createMetadata({}),
+  metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
@@ -34,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${plusJakarta.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background pb-[4.5rem] font-sans text-foreground md:pb-0">

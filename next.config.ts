@@ -7,6 +7,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "omnirexis.com" }],
+        destination: "https://omnirexis.co.uk/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.omnirexis.com" }],
+        destination: "https://www.omnirexis.co.uk/:path*",
+        permanent: true,
+      },
+      {
         source: "/services",
         destination: "/solutions",
         permanent: true,

@@ -21,8 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       route === ""
         ? 1
-        : route === "/contact"
-          ? 0.95
-          : 0.8,
+        : route === "/contact" || route === "/solutions" || route === "/about"
+          ? 0.9
+          : route === "/faq"
+            ? 0.85
+            : 0.7,
   }));
 }

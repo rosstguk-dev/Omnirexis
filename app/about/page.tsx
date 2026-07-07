@@ -4,14 +4,10 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { Section } from "@/components/shared/section";
 import { GlassCard } from "@/components/visuals/glass-card";
-import { createMetadata } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
 
-export const metadata = createMetadata({
-  title: "About Omnirexis",
-  description:
-    "Omnirexis exists because most businesses know AI is important but don't know where to start. We remove complexity, implement practical AI solutions, and deliver measurable outcomes — not technology for its own sake.",
-  path: "/about",
-});
+export const metadata = metadataFor("about");
 
 const principles = [
   {
@@ -34,6 +30,15 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
+      <PageStructuredData
+        path={pageSeo.about.path}
+        title={pageSeo.about.title}
+        description={pageSeo.about.description}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]}
+      />
       <PageHeader
         eyebrow="About"
         title="We don't sell AI. We deliver outcomes."

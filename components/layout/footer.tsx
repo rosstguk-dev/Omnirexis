@@ -30,7 +30,21 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Logo variant="footer" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/40">
-              {siteConfig.mission}
+              {siteConfig.mission}{" "}
+              <Link
+                href="/solutions"
+                className="text-[#55D6FF]/80 transition-colors hover:text-[#55D6FF]"
+              >
+                View our solutions
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="/about"
+                className="text-[#55D6FF]/80 transition-colors hover:text-[#55D6FF]"
+              >
+                learn about Omnirexis
+              </Link>
+              .
             </p>
             <a
               href={siteConfig.linkedin}

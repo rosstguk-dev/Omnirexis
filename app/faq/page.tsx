@@ -3,19 +3,24 @@ import { FaqSection } from "@/components/sections/faq-section";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqJsonLd } from "@/lib/seo";
-import { createMetadata } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
 
-export const metadata = createMetadata({
-  title: "Frequently Asked Questions",
-  description:
-    "Answers to common questions about Omnirexis AI implementation — technology selection, integrations, ROI, ongoing optimisation, security and getting started.",
-  path: "/faq",
-});
+export const metadata = metadataFor("faq");
 
 export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqJsonLd()} />
+      <PageStructuredData
+        path={pageSeo.faq.path}
+        title={pageSeo.faq.title}
+        description={pageSeo.faq.description}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ]}
+      />
       <PageHeader
         eyebrow="FAQ"
         title="Everything you need to know"

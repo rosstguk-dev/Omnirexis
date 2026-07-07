@@ -5,18 +5,24 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
 import { Section } from "@/components/shared/section";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { createMetadata, industries } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
+import { industries } from "@/lib/site";
 
-export const metadata = createMetadata({
-  title: "Industries",
-  description:
-    "Omnirexis implements AI automation for construction, trades, manufacturing, healthcare, professional services, hospitality, fitness, retail, property and automotive businesses — tailored to each sector's workflows and commercial priorities.",
-  path: "/industries",
-});
+export const metadata = metadataFor("industries");
 
 export default function IndustriesPage() {
   return (
     <>
+      <PageStructuredData
+        path={pageSeo.industries.path}
+        title={pageSeo.industries.title}
+        description={pageSeo.industries.description}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Industries", path: "/industries" },
+        ]}
+      />
       <PageHeader
         eyebrow="Industries"
         title="Implementation expertise for how your sector operates"

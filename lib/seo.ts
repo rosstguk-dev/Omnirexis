@@ -10,6 +10,10 @@ const weekdayNames = [
   "Sunday",
 ] as const;
 
+function absoluteUrl(path = "") {
+  return `${siteConfig.url}${path}`;
+}
+
 function parseTimeTo24Hour(time: string) {
   const match = time.trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
   if (!match) return time;
@@ -24,9 +28,11 @@ function parseTimeTo24Hour(time: string) {
   return `${hours.toString().padStart(2, "0")}:${minutes}`;
 }
 
-function openingHoursSpecification() {
+export function openingHoursSpecification() {
   return businessHoursSchedule.map((slot) => {
-    const [opens, closes] = slot.hours.split("–").map((value) => parseTimeTo24Hour(value));
+    const [opens, closes] = slot.hours
+      .split("–")
+      .map((value) => parseTimeTo24Hour(value));
     const dayOfWeek =
       slot.days === "Monday – Friday"
         ? weekdayNames.slice(0, 5)
@@ -45,28 +51,31 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: siteConfig.legalName,
+    name: siteConfig.name,
+    legalName: siteConfig.legalName,
     alternateName: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}${siteConfig.logo}`,
+    logo: absoluteUrl(siteConfig.logo),
+    image: absoluteUrl(siteConfig.logo),
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.phoneInternational,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "100 Innovation Drive, Suite 400",
-      addressLocality: "San Francisco",
-      addressRegion: "CA",
-      postalCode: "94105",
-      addressCountry: "US",
+      addressCountry: "GB",
     },
-    sameAs: [siteConfig.linkedin],
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    sameAs: siteConfig.socialProfiles,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: siteConfig.phoneInternational,
       contactType: "sales",
       email: siteConfig.email,
-      availableLanguage: "English",
+      availableLanguage: ["English"],
+      areaServed: "GB",
       hoursAvailable: businessHoursSchedule
         .map((slot) => `${slot.days}: ${slot.hours}`)
         .join("; "),
@@ -75,44 +84,124 @@ export function organizationJsonLd() {
   };
 }
 
-export function websiteJsonLd() {
+export function localBusinessJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": `${siteConfig.url}/#localbusiness`,
     name: siteConfig.name,
     url: siteConfig.url,
+    image: absoluteUrl(siteConfig.logo),
+    logo: absoluteUrl(siteConfig.logo),
     description: siteConfig.description,
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
+    telephone: siteConfig.phoneInternational,
+    email: siteConfig.email,
+    priceRange: "££",
+    currenciesAccepted: "GBP",
+    paymentAccepted: "Invoice",
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "GB",
+    },
+    openingHoursSpecification: openingHoursSpecification(),
+    sameAs: siteConfig.socialProfiles,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteConfig.phoneInternational,
+      contactType: "customer service",
+      email: siteConfig.email,
+      availableLanguage: ["English"],
+      areaServed: "GB",
+    },
+    knowsAbout: [
+      "AI Automation UK",
+      "Business AI Consultant UK",
+      "Workflow Automation",
+      "AI Consultancy",
+      "Artificial Intelligence for Business",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Automation Services",
+      itemListElement: solutions.map((solution, index) => ({
+        "@type": "Offer",
+        position: index + 1,
+        itemOffered: {
+          "@type": "Service",
+          name: solution.title,
+          description: solution.summary,
+        },
+      })),
     },
   };
 }
 
-export function professionalServiceJsonLd() {
+export function websiteJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
-    description: `${siteConfig.description} We configure and integrate best-in-class AI platforms — we do not develop proprietary AI software.`,
-    priceRange: "$$",
-    areaServed: {
-      "@type": "Country",
-      name: "United States",
-    },
-    serviceType: solutions.map((s) => s.title),
-    telephone: siteConfig.phoneInternational,
-    openingHoursSpecification: openingHoursSpecification(),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "100 Innovation Drive, Suite 400",
-      addressLocality: "San Francisco",
-      addressRegion: "CA",
-      postalCode: "94105",
-      addressCountry: "US",
+    description: siteConfig.description,
+    inLanguage: "en-GB",
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
   };
+}
+
+export function webPageJsonLd({
+  path,
+  title,
+  description,
+}: {
+  path: string;
+  title: string;
+  description: string;
+}) {
+  const url = absoluteUrl(path);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: title,
+    description,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#localbusiness`,
+    },
+    inLanguage: "en-GB",
+  };
+}
+
+export function breadcrumbJsonLd(
+  items: ReadonlyArray<{ name: string; path: string }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function professionalServiceJsonLd() {
+  return localBusinessJsonLd();
 }
 
 export function faqJsonLd() {
@@ -128,4 +217,26 @@ export function faqJsonLd() {
       },
     })),
   };
+}
+
+export function pageStructuredData({
+  path,
+  title,
+  description,
+  breadcrumbs,
+}: {
+  path: string;
+  title: string;
+  description: string;
+  breadcrumbs?: ReadonlyArray<{ name: string; path: string }>;
+}) {
+  const data: Record<string, unknown>[] = [
+    webPageJsonLd({ path, title, description }),
+  ];
+
+  if (breadcrumbs && breadcrumbs.length > 1) {
+    data.push(breadcrumbJsonLd(breadcrumbs));
+  }
+
+  return data;
 }

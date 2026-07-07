@@ -6,18 +6,24 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
 import { Section } from "@/components/shared/section";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { createMetadata, siteConfig, solutions } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
+import { siteConfig, solutions } from "@/lib/site";
 
-export const metadata = createMetadata({
-  title: "Flagship Services",
-  description:
-    "Omnirexis offers four flagship services: AI Opportunity Audit, AI Voice Receptionists, Business Process Automation and AI Customer Experience — each delivered using proven AI platforms and designed for measurable business outcomes.",
-  path: "/solutions",
-});
+export const metadata = metadataFor("solutions");
 
 export default function SolutionsPage() {
   return (
     <>
+      <PageStructuredData
+        path={pageSeo.solutions.path}
+        title={pageSeo.solutions.title}
+        description={pageSeo.solutions.description}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+        ]}
+      />
       <PageHeader
         eyebrow="Solutions"
         title="Four flagship services built around your outcomes"

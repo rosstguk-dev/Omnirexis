@@ -34,14 +34,19 @@ export const siteConfig = {
     "Omnirexis is a premium AI implementation, automation and integration consultancy. We identify opportunities, design practical implementation plans, configure best-in-class AI platforms, integrate with your existing systems, and deliver measurable business outcomes.",
   positioning:
     "We are not a software company. We select proven AI platforms, integrate them into your business, and deliver outcomes you can measure — time saved, costs reduced, revenue grown, and customer experience improved.",
-  url: "https://omnirexis.com",
+  url: "https://omnirexis.co.uk",
   logo: "/images/omnirexis-logo.svg",
   logoIcon: "/favicon.png",
+  ogImage: "/images/hero-bg.jpg",
   email: "hello@omnirexis.com",
   phone: "07566 729429",
   phoneInternational: "+44 7566 729429",
   linkedin: "https://linkedin.com/company/omnirexis",
-  address: "100 Innovation Drive, Suite 400, San Francisco, CA 94105",
+  socialProfiles: [
+    "https://linkedin.com/company/omnirexis",
+  ],
+  locale: "en_GB",
+  address: "United Kingdom",
   ctaLabel: "Book Your Free AI Strategy Call",
   ctaHref:
     "https://meetings-eu1.hubspot.com/ross-gallagher/free-ai-strategy-call",
@@ -50,15 +55,17 @@ export const siteConfig = {
   enquiryCtaLabel: "Send Enquiry",
   enquirySubmitLabel: "Send Enquiry",
   keywords: [
+    "AI Automation UK",
+    "Business AI Consultant UK",
+    "Workflow Automation",
+    "AI Consultancy",
+    "Artificial Intelligence for Business",
     "AI implementation consultancy",
-    "AI automation consultancy",
     "business process automation",
     "AI integration services",
     "workflow automation consulting",
-    "AI strategy consulting",
+    "AI strategy consulting UK",
     "customer experience automation",
-    "sales automation consulting",
-    "AI consulting San Francisco",
     "SMB AI implementation",
   ],
 };
@@ -434,17 +441,37 @@ export function createMetadata({
   title,
   description,
   path = "",
+  absoluteTitle = false,
+  noIndex = false,
 }: {
   title?: string;
   description?: string;
   path?: string;
+  absoluteTitle?: boolean;
+  noIndex?: boolean;
 }): Metadata {
   const pageTitle = title
-    ? `${title} | ${siteConfig.name}`
+    ? absoluteTitle
+      ? title
+      : `${title} | ${siteConfig.name}`
     : `${siteConfig.name} — ${siteConfig.tagline}`;
 
   const pageDescription = description ?? siteConfig.description;
   const canonical = `${siteConfig.url}${path}`;
+  const ogImages = [
+    {
+      url: siteConfig.ogImage,
+      width: 1200,
+      height: 630,
+      alt: `${siteConfig.name} — AI automation and business AI solutions UK`,
+    },
+    {
+      url: siteConfig.logo,
+      width: 3175,
+      height: 653,
+      alt: `${siteConfig.name} logo`,
+    },
+  ];
 
   return {
     title: pageTitle,
@@ -458,15 +485,17 @@ export function createMetadata({
       siteName: siteConfig.name,
       type: "website",
       url: canonical,
-      locale: "en_US",
-      images: [{ url: "/images/hero-bg.jpg", width: 1200, height: 630, alt: siteConfig.name }],
+      locale: siteConfig.locale,
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description: pageDescription,
-      images: ["/images/hero-bg.jpg"],
+      images: [siteConfig.ogImage, siteConfig.logo],
     },
-    robots: { index: true, follow: true },
+    robots: noIndex
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
   };
 }

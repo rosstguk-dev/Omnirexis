@@ -6,21 +6,28 @@ import { CtaButton } from "@/components/shared/cta-button";
 import { GlassCard } from "@/components/visuals/glass-card";
 import { ContactForm } from "@/components/contact/contact-form";
 import { BusinessHours } from "@/components/shared/business-hours";
-import { createMetadata, phoneTelHref, siteConfig } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
+import { phoneTelHref, siteConfig } from "@/lib/site";
 
-export const metadata = createMetadata({
-  title: "Book Your Free AI Strategy Call",
-  description:
-    "Contact Omnirexis to book your free AI Strategy Call. Tell us about your business and discover how the right AI implementation can save time, reduce costs and grow revenue.",
-  path: "/contact",
-});
+export const metadata = metadataFor("contact");
 
 export default function ContactPage() {
   return (
-    <section className="relative min-h-screen" aria-labelledby="contact-heading">
+    <>
+      <PageStructuredData
+        path={pageSeo.contact.path}
+        title={pageSeo.contact.title}
+        description={pageSeo.contact.description}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]}
+      />
+      <section className="relative min-h-screen" aria-labelledby="contact-heading">
       <Image
         src="/images/contact-bg.jpg"
-        alt=""
+        alt="Abstract technology background for Omnirexis contact page"
         fill
         className="object-cover object-center"
         sizes="100vw"
@@ -132,5 +139,6 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

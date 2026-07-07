@@ -18,18 +18,15 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import {
   faqJsonLd,
+  localBusinessJsonLd,
   organizationJsonLd,
-  professionalServiceJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
-import { createMetadata, industries, solutions } from "@/lib/site";
+import { metadataFor, pageSeo } from "@/lib/page-metadata";
+import { industries, solutions } from "@/lib/site";
+import { PageStructuredData } from "@/components/seo/page-structured-data";
 
-export const metadata = createMetadata({
-  title: "AI Implementation & Automation Consultancy",
-  description:
-    "Omnirexis is a premium AI implementation, automation and integration consultancy. We identify opportunities, configure best-in-class platforms, integrate with your systems, and deliver measurable outcomes — time saved, costs reduced, revenue grown. Book your free AI Strategy Call.",
-  path: "/",
-});
+export const metadata = metadataFor("home");
 
 export default function HomePage() {
   return (
@@ -38,9 +35,15 @@ export default function HomePage() {
         data={[
           organizationJsonLd(),
           websiteJsonLd(),
-          professionalServiceJsonLd(),
+          localBusinessJsonLd(),
           faqJsonLd(),
         ]}
+      />
+      <PageStructuredData
+        path={pageSeo.home.path}
+        title={pageSeo.home.title}
+        description={pageSeo.home.description}
+        breadcrumbs={[{ name: "Home", path: "/" }]}
       />
       <Hero />
       <Stats />

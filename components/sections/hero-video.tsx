@@ -62,7 +62,7 @@ export function HeroVideo() {
     <div className="absolute inset-0 z-0" aria-hidden="true">
       <Image
         src={POSTER_SRC}
-        alt=""
+        alt="Omnirexis AI automation consultancy hero background"
         fill
         priority
         className="object-cover object-[center_20%]"
