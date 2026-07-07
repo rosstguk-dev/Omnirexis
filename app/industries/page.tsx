@@ -1,7 +1,6 @@
 import { IndustryCard } from "@/components/sections/industry-card";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
-
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
 import { Section } from "@/components/shared/section";

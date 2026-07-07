@@ -1,25 +1,23 @@
 import Image from "next/image";
-import { Phone } from "lucide-react";
-import { ContactForm } from "@/components/contact/contact-form";
+import { Clock, Mail, Phone } from "lucide-react";
+import { LinkedInIcon } from "@/components/icons/linkedin";
 import { FadeIn } from "@/components/motion/fade-in";
-import { BusinessHours } from "@/components/shared/business-hours";
 import { CtaButton } from "@/components/shared/cta-button";
 import { GlassCard } from "@/components/visuals/glass-card";
+import { ContactForm } from "@/components/contact/contact-form";
+import { BusinessHours } from "@/components/shared/business-hours";
 import { createMetadata, phoneTelHref, siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
-  title: "Contact Us",
+  title: "Book Your Free AI Strategy Call",
   description:
-    "Contact Omnirexis to book your free AI Strategy Call or send an enquiry. Tell us about your business and discover how the right AI implementation can save time, reduce costs and grow revenue.",
+    "Contact Omnirexis to book your free AI Strategy Call. Tell us about your business and discover how the right AI implementation can save time, reduce costs and grow revenue.",
   path: "/contact",
 });
 
 export default function ContactPage() {
   return (
-    <section
-      className="relative min-h-screen overflow-hidden bg-[#081826]"
-      aria-labelledby="contact-heading"
-    >
+    <section className="relative min-h-screen" aria-labelledby="contact-heading">
       <Image
         src="/images/contact-bg.jpg"
         alt=""
@@ -29,8 +27,6 @@ export default function ContactPage() {
         priority
       />
       <div className="absolute inset-0 bg-[#081826]/88" />
-      <div className="ambient-glow pointer-events-none absolute inset-0" />
-      <div className="pointer-events-none absolute inset-0 grid-pattern opacity-15" />
 
       <div className="section-container relative pt-32 pb-28 sm:pt-40 sm:pb-36">
         <FadeIn className="mx-auto max-w-3xl text-center">
@@ -41,62 +37,99 @@ export default function ContactPage() {
             id="contact-heading"
             className="mt-4 text-[2.25rem] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-5xl"
           >
-            Let&apos;s Talk About Your Business
+            Book Your Free AI Strategy Call
           </h1>
           <p className="prose-narrow mx-auto mt-5 text-base text-white/55 sm:text-lg">
-            Whether you&apos;re exploring AI for the first time or looking to
-            automate existing processes, we&apos;d love to hear about your
-            goals.
-          </p>
-          <div className="mt-9 flex justify-center">
-            <CtaButton />
-          </div>
-          <p className="mt-4 text-xs text-white/30">
-            {siteConfig.ctaMicrocopy}
+            Share a little about your business and where time is being lost.
+            We&apos;ll come prepared with specific implementation
+            recommendations for your discovery session.
           </p>
         </FadeIn>
 
-        <FadeIn className="mx-auto mt-16 max-w-2xl">
-          <h2 id="enquiry-form-heading" className="sr-only">
-            Send an enquiry
-          </h2>
-          <GlassCard variant="dark" hover={false} className="p-8 sm:p-10">
-            <ContactForm />
-          </GlassCard>
-        </FadeIn>
+        <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-5 lg:gap-10">
+          <FadeIn className="lg:col-span-3">
+            <GlassCard variant="dark" hover={false} className="p-8 sm:p-10">
+              <ContactForm />
+            </GlassCard>
+          </FadeIn>
 
-        <FadeIn className="mx-auto mt-10 max-w-2xl" delay={0.08}>
-          <GlassCard variant="dark" hover={false} className="p-8 sm:p-10">
-            <h2 className="text-lg font-semibold tracking-[-0.01em] text-white">
-              Contact Details
-            </h2>
-            <div className="mt-6 space-y-6">
-              <div className="flex items-start gap-4">
-                <Phone
-                  className="mt-0.5 size-[18px] shrink-0 text-[#55D6FF]"
-                  aria-hidden="true"
-                />
-                <div>
-                  <p className="text-sm font-medium text-white">Phone</p>
-                  <a
-                    href={phoneTelHref()}
-                    className="mt-1 block text-sm text-white/45 transition-colors hover:text-[#55D6FF]"
-                  >
-                    {siteConfig.phone}
-                  </a>
+          <FadeIn className="lg:col-span-2" delay={0.12}>
+            <div className="space-y-4">
+              {[
+                {
+                  icon: Mail,
+                  label: "Email",
+                  value: siteConfig.email,
+                  href: `mailto:${siteConfig.email}`,
+                },
+                {
+                  icon: Phone,
+                  label: "Phone",
+                  value: siteConfig.phone,
+                  href: phoneTelHref(),
+                },
+                {
+                  label: "Business hours",
+                  icon: Clock,
+                },
+              ].map((item) => (
+                <GlassCard key={item.label} variant="dark" hover={false}>
+                  <div className="flex items-start gap-4">
+                    <item.icon
+                      className="mt-0.5 size-[18px] shrink-0 text-[#55D6FF]"
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <p className="text-sm font-medium text-white">
+                        {item.label}
+                      </p>
+                      {"href" in item && item.href ? (
+                        <a
+                          href={item.href}
+                          className="mt-1 block text-sm text-white/45 transition-colors hover:text-[#55D6FF]"
+                        >
+                          {item.value}
+                        </a>
+                      ) : item.label === "Business hours" ? (
+                        <BusinessHours
+                          className="mt-1"
+                          daysClassName="text-sm text-white/45"
+                          hoursClassName="text-sm text-white/45"
+                        />
+                      ) : (
+                        <p className="mt-1 text-sm text-white/45">
+                          {"value" in item ? item.value : null}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </GlassCard>
+              ))}
+
+              <GlassCard variant="dark" hover={false}>
+                <div className="flex items-start gap-4">
+                  <LinkedInIcon className="mt-0.5 size-[18px] shrink-0 text-[#55D6FF]" />
+                  <div>
+                    <p className="text-sm font-medium text-white">LinkedIn</p>
+                    <a
+                      href={siteConfig.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 block text-sm text-white/45 transition-colors hover:text-[#55D6FF]"
+                    >
+                      linkedin.com/company/omnirexis
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-white">Business Hours</p>
-                <BusinessHours
-                  className="mt-3"
-                  daysClassName="text-sm text-white/45"
-                  hoursClassName="text-sm text-white/45"
-                />
-              </div>
+              </GlassCard>
+
+              <CtaButton className="w-full" />
+              <p className="text-center text-xs text-white/30">
+                {siteConfig.ctaMicrocopy}
+              </p>
             </div>
-          </GlassCard>
-        </FadeIn>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

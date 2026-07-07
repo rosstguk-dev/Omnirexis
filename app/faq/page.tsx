@@ -1,7 +1,6 @@
 import { PageHeader } from "@/components/sections/page-header";
 import { FaqSection } from "@/components/sections/faq-section";
 import { CtaBanner } from "@/components/sections/cta-banner";
-
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqJsonLd } from "@/lib/seo";
 import { createMetadata } from "@/lib/site";

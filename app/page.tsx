@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaBanner } from "@/components/sections/cta-banner";
-
 import { FaqSection } from "@/components/sections/faq-section";
 import { Hero } from "@/components/sections/hero";
 import { IndustryCard } from "@/components/sections/industry-card";

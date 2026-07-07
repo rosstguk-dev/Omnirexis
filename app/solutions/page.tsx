@@ -1,7 +1,6 @@
 import { SolutionCard } from "@/components/sections/solution-card";
 import { PageHeader } from "@/components/sections/page-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
-
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaStrip } from "@/components/shared/cta-strip";
