@@ -4,8 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { HeroVideo } from "@/components/sections/hero-video";
 import { NeuralBackground } from "@/components/visuals/neural-background";
-import { CtaButton } from "@/components/shared/cta-button";
-import { EnquiryCtaLink } from "@/components/shared/enquiry-cta-link";
+import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
 import { Button } from "@/components/ui/button";
 import { siteConfig, trustBadges } from "@/lib/site";
 
@@ -47,8 +46,8 @@ export function Hero() {
             interaction.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <CtaButton />
+          <div className="mt-10 flex flex-col gap-4">
+            <BookingCtaGroup align="left" theme="dark" />
             <Button
               nativeButton={false}
               render={
@@ -56,11 +55,9 @@ export function Hero() {
               }
               variant="outline"
               size="lg"
-              className="h-12 rounded-xl border-white/15 bg-white/[0.04] px-7 text-sm font-semibold text-white backdrop-blur-sm hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+              className="h-12 w-full rounded-xl border-white/15 bg-white/[0.04] px-7 text-sm font-semibold text-white backdrop-blur-sm hover:border-white/25 hover:bg-white/[0.08] hover:text-white sm:w-auto"
             />
           </div>
-          <p className="mt-4 text-xs text-white/35">{siteConfig.ctaMicrocopy}</p>
-          <EnquiryCtaLink className="mt-2" theme="dark" />
         </motion.div>
 
         <motion.div

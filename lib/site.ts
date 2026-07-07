@@ -47,7 +47,8 @@ export const siteConfig = {
     "https://meetings-eu1.hubspot.com/ross-gallagher/free-ai-strategy-call",
   ctaMicrocopy: "30-minute call · Senior strategist · No obligation",
   enquirySectionId: "enquiry",
-  enquiryCtaLabel: "Not ready to book? Send an enquiry",
+  enquiryCtaHref: "/#enquiry",
+  enquiryCtaLabel: "Send an Enquiry",
   enquirySubmitLabel: "Send Enquiry",
   keywords: [
     "AI implementation consultancy",

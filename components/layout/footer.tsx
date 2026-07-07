@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { Logo } from "@/components/layout/logo";
-import { CtaButton } from "@/components/shared/cta-button";
+import { BookingCtaGroup } from "@/components/shared/booking-cta-group";
 import { BusinessHours } from "@/components/shared/business-hours";
 import { footerLinks, phoneTelHref, siteConfig } from "@/lib/site";
 
@@ -19,7 +19,12 @@ export function Footer() {
               implementation roadmap — whether you work with us or not.
             </p>
           </div>
-          <CtaButton className="mt-6 shrink-0 sm:mt-0" size="default" />
+          <BookingCtaGroup
+            align="left"
+            theme="dark"
+            className="mt-6 shrink-0 sm:mt-0"
+            buttonSize="default"
+          />
         </div>
 
         <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-5">
