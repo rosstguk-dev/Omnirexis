@@ -165,7 +165,7 @@ export function ContactForm() {
             id="phone"
             name="phone"
             type="tel"
-            placeholder="07566 729429"
+            placeholder="0161 250 0045"
             autoComplete="tel"
             disabled={status === "submitting"}
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"

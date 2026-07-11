@@ -39,8 +39,8 @@ export const siteConfig = {
   logoIcon: "/favicon.png",
   ogImage: "/images/hero-bg.jpg",
   email: "hello@omnirexis.com",
-  phone: "07566 729429",
-  phoneInternational: "+44 7566 729429",
+  phone: "0161 250 0045",
+  phoneInternational: "+44 161 250 0045",
   linkedin: "https://linkedin.com/company/omnirexis",
   socialProfiles: [
     "https://linkedin.com/company/omnirexis",
