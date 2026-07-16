@@ -1,5 +1,11 @@
 import type { InsightArticle } from "@/lib/insights";
-import { businessHoursSchedule, faqs, siteConfig, solutions } from "@/lib/site";
+import {
+  businessHoursSchedule,
+  faqs,
+  postalAddressSchema,
+  siteConfig,
+  solutions,
+} from "@/lib/site";
 
 const weekdayNames = [
   "Monday",
@@ -61,10 +67,7 @@ export function organizationJsonLd() {
     description: siteConfig.description,
     email: siteConfig.email,
     telephone: siteConfig.phoneInternational,
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "GB",
-    },
+    address: postalAddressSchema(),
     areaServed: {
       "@type": "Country",
       name: "United Kingdom",
@@ -104,10 +107,7 @@ export function localBusinessJsonLd() {
       "@type": "Country",
       name: "United Kingdom",
     },
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "GB",
-    },
+    address: postalAddressSchema(),
     openingHoursSpecification: openingHoursSpecification(),
     sameAs: siteConfig.socialProfiles,
     contactPoint: {

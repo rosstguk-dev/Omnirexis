@@ -33,7 +33,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: `Questions about these terms may be directed to ${siteConfig.email}.`,
+    body: `Questions about these terms may be directed to ${siteConfig.email}. Postal address: ${siteConfig.address}.`,
   },
 ] as const;
 

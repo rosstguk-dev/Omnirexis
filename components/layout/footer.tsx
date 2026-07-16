@@ -3,6 +3,7 @@ import { LinkedInIcon } from "@/components/icons/linkedin";
 import { Logo } from "@/components/layout/logo";
 import { BookingCtaStack } from "@/components/shared/booking-cta-stack";
 import { BusinessHours } from "@/components/shared/business-hours";
+import { BusinessAddress } from "@/components/shared/business-address";
 import { footerLinks, phoneTelHref, siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -104,6 +105,10 @@ export function Footer() {
                 </a>
               </li>
             </ul>
+            <BusinessAddress
+              className="mt-4"
+              lineClassName="text-sm text-white/45"
+            />
             <BusinessHours
               className="mt-4"
               daysClassName="text-sm text-white/45"

@@ -29,7 +29,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: `For privacy-related enquiries, contact ${siteConfig.legalName} at ${siteConfig.email} or ${siteConfig.address}.`,
+    body: `For privacy-related enquiries, contact ${siteConfig.legalName} at ${siteConfig.email}. Postal address: ${siteConfig.address}.`,
   },
 ] as const;
 

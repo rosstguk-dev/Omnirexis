@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Clock, Mail, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { LinkedInIcon } from "@/components/icons/linkedin";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaButton } from "@/components/shared/cta-button";
 import { GlassCard } from "@/components/visuals/glass-card";
 import { ContactForm } from "@/components/contact/contact-form";
+import { BusinessAddress } from "@/components/shared/business-address";
 import { BusinessHours } from "@/components/shared/business-hours";
 import { PageStructuredData } from "@/components/seo/page-structured-data";
 import { metadataFor, pageSeo } from "@/lib/page-metadata";
@@ -76,6 +77,10 @@ export default function ContactPage() {
                   href: phoneTelHref(),
                 },
                 {
+                  label: "Address",
+                  icon: MapPin,
+                },
+                {
                   label: "Business hours",
                   icon: Clock,
                 },
@@ -97,6 +102,11 @@ export default function ContactPage() {
                         >
                           {item.value}
                         </a>
+                      ) : item.label === "Address" ? (
+                        <BusinessAddress
+                          className="mt-1"
+                          lineClassName="text-sm text-white/45"
+                        />
                       ) : item.label === "Business hours" ? (
                         <BusinessHours
                           className="mt-1"

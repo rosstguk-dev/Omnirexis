@@ -46,7 +46,7 @@ export const siteConfig = {
     "https://linkedin.com/company/omnirexis",
   ],
   locale: "en_GB",
-  address: "United Kingdom",
+  address: "Bartle House, 9 Oxford Court, Manchester, M2 3WQ",
   ctaLabel: "Book Your Free AI Strategy Call",
   ctaHref:
     "https://meetings-eu1.hubspot.com/ross-gallagher/free-ai-strategy-call",
@@ -421,6 +421,31 @@ export const faqs = [
       "We apply enterprise-grade practices: encrypted data in transit and at rest, role-based access controls and compliance with applicable data protection standards. Your data is never sold, shared with third parties or used to train public models.",
   },
 ] as const;
+
+export const businessAddress = {
+  building: "Bartle House",
+  streetAddress: "9 Oxford Court",
+  locality: "Manchester",
+  postalCode: "M2 3WQ",
+  country: "United Kingdom",
+} as const;
+
+export const businessAddressLines = [
+  businessAddress.building,
+  businessAddress.streetAddress,
+  businessAddress.locality,
+  businessAddress.postalCode,
+] as const;
+
+export function postalAddressSchema() {
+  return {
+    "@type": "PostalAddress" as const,
+    streetAddress: `${businessAddress.building}, ${businessAddress.streetAddress}`,
+    addressLocality: businessAddress.locality,
+    postalCode: businessAddress.postalCode,
+    addressCountry: "GB",
+  };
+}
 
 export const businessHoursSchedule = [
   { days: "Monday – Friday", hours: "8:00 AM – 8:00 PM" },
