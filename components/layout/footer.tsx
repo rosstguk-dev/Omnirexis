@@ -105,8 +105,9 @@ export function Footer() {
                 </a>
               </li>
             </ul>
+            <p className="mt-4 text-sm font-medium text-white">Address</p>
             <BusinessAddress
-              className="mt-4"
+              className="mt-1"
               lineClassName="text-sm text-white/45"
             />
             <BusinessHours
