@@ -9,6 +9,7 @@ import {
   isValidOptionalWebsiteUrl,
   normalizeWebsiteUrl,
 } from "@/lib/contact-validation";
+import { contactFieldLimits } from "@/lib/contact-submission";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -98,6 +99,7 @@ export function ContactForm() {
             placeholder="Alexandra Chen"
             autoComplete="name"
             required
+            maxLength={contactFieldLimits.name}
             disabled={status === "submitting"}
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
           />
@@ -112,6 +114,7 @@ export function ContactForm() {
             placeholder="Your company name"
             autoComplete="organization"
             required
+            maxLength={contactFieldLimits.company}
             disabled={status === "submitting"}
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
           />
@@ -130,6 +133,7 @@ export function ContactForm() {
           onChange={(event) => setWebsite(event.target.value)}
           placeholder="https://yourcompany.com"
           autoComplete="url"
+          maxLength={contactFieldLimits.website}
           disabled={status === "submitting"}
           aria-invalid={websiteError ? true : undefined}
           aria-describedby={websiteError ? "website-error" : undefined}
@@ -153,6 +157,7 @@ export function ContactForm() {
             placeholder="alexandra@northline.com"
             autoComplete="email"
             required
+            maxLength={contactFieldLimits.email}
             disabled={status === "submitting"}
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
           />
@@ -167,6 +172,7 @@ export function ContactForm() {
             type="tel"
             placeholder="0161 250 0045"
             autoComplete="tel"
+            maxLength={contactFieldLimits.phone}
             disabled={status === "submitting"}
             className="h-11 rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
           />
@@ -182,6 +188,7 @@ export function ContactForm() {
           placeholder="Tell us which repetitive processes are costing your team the most time — lead follow-up, customer support, internal admin, or something else."
           rows={5}
           required
+          maxLength={contactFieldLimits.message}
           disabled={status === "submitting"}
           className="rounded-xl border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
         />
@@ -201,7 +208,8 @@ export function ContactForm() {
       </Button>
       <p className="text-xs leading-relaxed text-white/30">
         By submitting this form, you agree to be contacted regarding your
-        enquiry. We never share your information with third parties. Read our{" "}
+        enquiry. Secure service providers may process your information on our
+        behalf. Read our{" "}
         <a
           href="/privacy"
           className="text-[#55D6FF]/80 underline-offset-2 hover:underline"
