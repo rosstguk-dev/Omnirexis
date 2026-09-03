@@ -4,9 +4,11 @@ import {
   contactFieldLimits,
   handleContactSubmission,
 } from "../lib/contact-submission.ts";
+import { contactDivisionFromQuery } from "../lib/contact-options.ts";
 
 const webhookUrl = "https://example.test/contact";
 const validPayload = {
+  division: "general",
   name: "Alexandra Chen",
   email: "alexandra@example.com",
   phone: "+44 161 250 0045",
@@ -68,8 +70,26 @@ describe("handleContactSubmission", () => {
     });
   });
 
+  it("forwards the selected Leisure Systems division in the webhook payload", async () => {
+    let capturedPayload: Record<string, unknown> | undefined;
+
+    const response = await handleContactSubmission(
+      requestFor({ ...validPayload, division: "leisure-systems" }),
+      webhookUrl,
+      async (_input, init) => {
+        capturedPayload = JSON.parse(String(init?.body));
+        return new Response(null, { status: 200 });
+      },
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(capturedPayload?.division, "leisure-systems");
+  });
+
   it("rejects invalid or oversized fields without calling fetch", async () => {
     const invalidPayloads = [
+      { ...validPayload, division: "unknown-division" },
+      { ...validPayload, division: "" },
       { ...validPayload, name: "" },
       { ...validPayload, name: "n".repeat(contactFieldLimits.name + 1) },
       { ...validPayload, email: "not-an-email" },
@@ -113,5 +133,20 @@ describe("handleContactSubmission", () => {
     assert.deepEqual(await response.json(), {
       error: "Unable to submit enquiry. Please try again later.",
     });
+  });
+});
+
+describe("contactDivisionFromQuery", () => {
+  it("preselects Leisure Systems from the division query parameter", () => {
+    assert.equal(contactDivisionFromQuery("leisure-systems"), "leisure-systems");
+    assert.equal(
+      contactDivisionFromQuery(["leisure-systems", "general"]),
+      "leisure-systems",
+    );
+  });
+
+  it("falls back safely when the query parameter is absent or invalid", () => {
+    assert.equal(contactDivisionFromQuery(undefined), "general");
+    assert.equal(contactDivisionFromQuery("not-a-division"), "general");
   });
 });

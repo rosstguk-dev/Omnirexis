@@ -34,7 +34,7 @@ export function CtaButton({
           href={siteConfig.ctaHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5"
+          className="items-center gap-2.5"
         >
           {showIcon && <Calendar className="size-4" aria-hidden="true" />}
           {label}

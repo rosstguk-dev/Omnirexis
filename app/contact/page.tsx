@@ -8,12 +8,20 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { BusinessAddress } from "@/components/shared/business-address";
 import { BusinessHours } from "@/components/shared/business-hours";
 import { PageStructuredData } from "@/components/seo/page-structured-data";
+import { contactDivisionFromQuery } from "@/lib/contact-options";
 import { metadataFor, pageSeo } from "@/lib/page-metadata";
 import { phoneTelHref, siteConfig } from "@/lib/site";
 
 export const metadata = metadataFor("contact");
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams: Promise<{ division?: string | string[] }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const { division } = await searchParams;
+  const initialDivision = contactDivisionFromQuery(division);
+
   return (
     <>
       <PageStructuredData
@@ -57,7 +65,7 @@ export default function ContactPage() {
         <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-5 lg:gap-10">
           <FadeIn className="lg:col-span-3">
             <GlassCard variant="dark" hover={false} className="p-8 sm:p-10">
-              <ContactForm />
+              <ContactForm initialDivision={initialDivision} />
             </GlassCard>
           </FadeIn>
 

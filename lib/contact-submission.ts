@@ -1,3 +1,5 @@
+import { isContactDivision, type ContactDivision } from "./contact-options.ts";
+
 export const contactFieldLimits = {
   name: 100,
   email: 254,
@@ -12,6 +14,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[0-9+().\-\s]+$/;
 
 type ContactPayload = {
+  division: ContactDivision;
   name: string;
   email: string;
   phone: string;
@@ -66,6 +69,7 @@ function validatePayload(body: unknown): ContactPayload | null {
   if (!body || typeof body !== "object" || Array.isArray(body)) return null;
 
   const record = body as Record<string, unknown>;
+  const division = readStringField(record, "division");
   const name = readStringField(record, "name");
   const email = readStringField(record, "email");
   const phone = readStringField(record, "phone");
@@ -74,6 +78,8 @@ function validatePayload(body: unknown): ContactPayload | null {
   const message = readStringField(record, "message");
 
   if (
+    division === null ||
+    !isContactDivision(division) ||
     name === null ||
     email === null ||
     phone === null ||
@@ -98,6 +104,7 @@ function validatePayload(body: unknown): ContactPayload | null {
   }
 
   return {
+    division,
     name,
     email,
     phone,

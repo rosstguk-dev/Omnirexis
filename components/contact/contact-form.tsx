@@ -9,6 +9,11 @@ import {
   isValidOptionalWebsiteUrl,
   normalizeWebsiteUrl,
 } from "@/lib/contact-validation";
+import {
+  contactHelpOptions,
+  defaultContactDivision,
+  type ContactDivision,
+} from "@/lib/contact-options";
 import { contactFieldLimits } from "@/lib/contact-submission";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -18,9 +23,15 @@ type FormStatus = "idle" | "submitting" | "success" | "error";
 const successMessage =
   "Thanks — your enquiry has been received. I'll be in touch shortly.";
 const errorMessage =
-  "Something went wrong. Please email ross@omnirexis.co.uk.";
+  "Something went wrong. Please email hello@omnirexis.com.";
 
-export function ContactForm() {
+type ContactFormProps = {
+  initialDivision?: ContactDivision;
+};
+
+export function ContactForm({
+  initialDivision = defaultContactDivision,
+}: ContactFormProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [website, setWebsite] = useState("");
   const [websiteError, setWebsiteError] = useState<string | null>(null);
@@ -40,6 +51,7 @@ export function ContactForm() {
     setStatus("submitting");
 
     const payload = {
+      division: String(formData.get("division") ?? defaultContactDivision),
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
@@ -87,6 +99,26 @@ export function ContactForm() {
           {errorMessage}
         </p>
       )}
+
+      <div className="space-y-2">
+        <Label htmlFor="division" className="text-sm text-white/70">
+          What can we help you with?
+        </Label>
+        <select
+          id="division"
+          name="division"
+          defaultValue={initialDivision}
+          required
+          disabled={status === "submitting"}
+          className="h-11 w-full rounded-xl border border-white/10 bg-[#0e2232] px-3 text-sm text-white outline-none transition-[color,box-shadow] focus-visible:border-[#1E90FF] focus-visible:ring-2 focus-visible:ring-[#1E90FF]/30 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {contactHelpOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">

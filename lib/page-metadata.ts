@@ -29,6 +29,18 @@ export const pageSeo = {
       "Sector-focused AI automation and workflow optimisation for construction, healthcare, professional services, retail, hospitality and more — tailored to how your UK business operates.",
     path: "/industries",
   },
+  divisions: {
+    title: "Business Divisions",
+    description:
+      "Explore the specialist business divisions operating under Omnirexis, with one central contact, enquiry, CRM and booking process.",
+    path: "/divisions",
+  },
+  leisureSystems: {
+    title: "Leisure Systems for Gyms, Spas & Health Clubs",
+    description:
+      "Practical operations systems for independent gyms, spas, hotel leisure clubs and health clubs — covering daily checks, compliance, rotas, tasks, procedures and reporting.",
+    path: "/divisions/leisure-systems",
+  },
   process: {
     title: "Our AI Implementation Process",
     description:

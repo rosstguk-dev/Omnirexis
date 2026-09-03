@@ -207,6 +207,61 @@ export function professionalServiceJsonLd() {
   return localBusinessJsonLd();
 }
 
+export function divisionsJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${siteConfig.url}/divisions#divisions`,
+    name: "Omnirexis Business Divisions",
+    url: `${siteConfig.url}/divisions`,
+    description:
+      "Specialist business divisions operating under the central Omnirexis business.",
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: 1,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          url: `${siteConfig.url}/divisions/leisure-systems`,
+          name: "OMNIREXIS Leisure Systems",
+        },
+      ],
+    },
+  };
+}
+
+export function leisureSystemsJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/divisions/leisure-systems#service`,
+    name: "OMNIREXIS Leisure Systems",
+    serviceType: "Leisure facility operations and compliance systems",
+    url: `${siteConfig.url}/divisions/leisure-systems`,
+    description:
+      "One practical system for daily checks, compliance, staff tasks, rotas, procedures and reporting, built around how each leisure facility works.",
+    provider: { "@id": `${siteConfig.url}/#localbusiness` },
+    areaServed: { "@type": "Country", name: "United Kingdom" },
+    audience: [
+      "Independent gyms",
+      "Spas",
+      "Hotel leisure clubs",
+      "Health clubs",
+    ],
+    offers: {
+      "@type": "Offer",
+      name: "Leisure Operations-in-a-Box",
+      price: "995",
+      priceCurrency: "GBP",
+      url: `${siteConfig.url}/contact?division=leisure-systems`,
+      description:
+        "One-off implementation with ongoing hosting, support and continuous improvement available from £149 per month.",
+    },
+  };
+}
+
 export function faqJsonLd() {
   return {
     "@context": "https://schema.org",
