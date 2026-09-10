@@ -1,0 +1,10 @@
+node_modules
+.vercel
+.output
+.tanstack
+dist
+screenshots
+*.log
+.env
+.env.*
+!.env.example

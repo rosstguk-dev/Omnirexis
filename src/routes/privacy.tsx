@@ -1,0 +1,40 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/site/layout";
+import { PageHero } from "@/components/site/page-hero";
+import { EMAIL } from "@/lib/site";
+
+export const Route = createFileRoute("/privacy")({ component: PrivacyPage });
+
+function PrivacyPage() {
+  return (
+    <SiteLayout>
+      <PageHero
+        kicker="Legal"
+        title="Privacy policy"
+        lede="Omnirexis is the data controller for enquiries sent through this site."
+      />
+      <article className="mx-auto max-w-3xl space-y-8 px-5 pb-24 text-base leading-relaxed text-muted sm:px-8">
+        <p>
+          We collect the name, company, email, phone number and any business
+          information you choose to share, so we can respond to an enquiry or
+          book a strategy call. We do not sell this information.
+        </p>
+        <p>
+          Secure service providers may process details on our behalf (for
+          example email, hosting, and meeting scheduling). Access, permissions
+          and data handling for client implementations are assessed per project
+          and agreed before systems are connected.
+        </p>
+        <p>
+          To ask about the information we hold, or to request a correction or
+          deletion, write to{" "}
+          <a className="text-bone underline" href={`mailto:${EMAIL}`}>
+            {EMAIL}
+          </a>
+          .
+        </p>
+        <p className="text-sm">Last updated September 2026.</p>
+      </article>
+    </SiteLayout>
+  );
+}

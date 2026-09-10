@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: #0a1d2e;
+  --color-paper-2: #0e2b40;
+  --color-ink: #081826;
+  --color-ink-2: #0c2235;
+  --color-ink-3: #102c43;
+  --color-bone: #eef6fc;
+  --color-muted: #8aa4b8;
+  --color-subtle: #6b8498;
+  --color-pine: #2199ea;
+  --color-pine-fg: #ffffff;
+  --color-cyan: #00aeef;
+  --color-blue: #137dc5;
+  --color-blue-dark: #0f5f96;
+  --color-line: #2199ea22;
+  --color-line-strong: #2199ea44;
+  --color-line-on-ink: #2199ea33;
+
+  --color-background: #081826;
+  --color-foreground: #eef6fc;
+  --color-card: #0a1d2e;
+  --color-primary: #2199ea;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #0e2b40;
+  --color-muted-foreground: #8aa4b8;
+  --color-accent: #00aeef;
+  --color-accent-foreground: #081826;
+  --color-border: #2199ea22;
+  --color-ring: #2199ea;
+  --color-destructive: #f07167;
+  --color-input: #2199ea33;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius: 12px;
+
+  --text-micro: 0.6875rem;
+  --text-mark: 0.9375rem;
+  --tracking-kicker: 0.22em;
+  --tracking-mark: 0.18em;
+  --tracking-micro: 0.14em;
+  --leading-display: 1.08;
+
+  --shadow-card: 0 0 0 1px #2199ea28, 0 18px 40px -24px #00aeef55;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-ink);
+    color: var(--color-bone);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-weight: 500;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-pine) 40%, transparent);
+    color: var(--color-bone);
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, #2199ea14 1px, transparent 1px),
+    linear-gradient(to bottom, #2199ea14 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-aurora {
+  background:
+    radial-gradient(ellipse 70% 55% at 85% 0%, #00aeef24, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, #137dc51f, transparent 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
